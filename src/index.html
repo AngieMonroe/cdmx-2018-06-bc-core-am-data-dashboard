@@ -4,8 +4,27 @@
     <meta charset="utf-8">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/master.">
   </head>
   <body>
+    <select id= "sedes" class="type">
+      <option disabled selected>Elige una Sede</option>
+      <option id="lima">Lima</option>
+      <option id="mexico">México</option>
+      <option id="santiago">Santiago</option>
+    </select>
+
+    <select id= "generaciones" class="type">
+      <option disabled selected>Elige una Sede</option>
+      <option id="lima">Tercera</option>
+      <option id="mexico">Cuarta</option>
+      <option id="santiago">Quinta</option>
+    </select>
+    <input type="button" value="Información" onclick="getData()"/>
+
+    </select>
+    <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
+    <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
