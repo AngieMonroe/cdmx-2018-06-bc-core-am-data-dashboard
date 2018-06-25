@@ -6,3 +6,5 @@ function getData() {
       console.log(laboratoria);
 })
 }
+
+//comentario
