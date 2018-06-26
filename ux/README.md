@@ -25,7 +25,7 @@ Tomar decisiones, crear estrategias y realizar intervenciones en tiempo real, de
 
 __Pain points:__ (En sus actividades diarias qué es lo que más les molesta u obstaculiza en el proceso de  realizar sus actividades/objetivos)
 De acuerdo a las respuestas obtenidas en el formulario antes mencionado, 4 de 4 TMs no cuentan con una interfaz donde puedan ver y hacer uso de la data de progreso del LMS de las estudiantes de Laboratoria. Actualmente cuentan con un sistema Excel que, a su parecer, no hace usable la información disponible,ya que la información se encuentra aun sin procesar, lo que resulta en una interfaz saturada.
-Son demasiados pasos, que involucran una búsqueda manual para encontrar la información que necesitan. 
+Son demasiados pasos, que involucran una búsqueda manual para encontrar la información que necesitan.
 Hacen uso de la data sobre el progreso de las estudiantes, la mayor parte del tiempo, en el computador dentro de las instalaciones de cada una de las sedes,pero existen ocasiones en las que al asistir a juntas con stakeholders les es necesario hacer uso de la data por medio de dispositivos móviles (tablets, celulares), el sistema actual alenta el proceso de acceso a la información.
 
 __Sentimientos:__(Sentimientos que les surgen dentro del proceso de sus actividades. Identificar cuáles predominan)
@@ -92,14 +92,17 @@ Ya que será una plataforma común para las distintas sedes, deseamos crear un d
 (Esta es la fase creativa, donde se comienza a construir el Data dashboard con la información obtenida de las fases anteriores. Se reafirma crear la experiencia de usuario, donde la solución resuelve necesidades y facilita la vida)
 Nuestro diseño apunta a continuar fomentando el trabajo en equipo realizado por las TMs de Laboratoria, al ahorro de tiempo en el análisis de data y a agilizar el proceso de toma de decisiones por medio de un data dashboard que presente la data de la manera más útil y procesada posible.
 
-Arquitectura de la web (Planificación del contenido de la página web): 
+Arquitectura de la web (Planificación del contenido de la página web):
 
-Sketch: ![Sketch1](.jpg)
+Flujo: ![Estructura semántica](/images/Estructura semántica.jpg)
+![Conexiones y flujo](Conexiones y flujo.jpg)
 
-Prototipo en figma: (Adjuntar liga)
+Sketch: ![Sketch1](/images/Sketch1.jpg)
+![Sketch2](/images/Sketch2.jpg)
+![Sketch3](/images/Sketch3.jpg)
+
+Prototipo en figma: ![Prototipo] (https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria)
 
 ### **5. User testing**
 (Si deseas validar tu propuesta, acércate a tu usuario y que te de feedback con el fin de mejorar tu producto en beneficio del negocio y de tu usuarix).
 ****
-
-

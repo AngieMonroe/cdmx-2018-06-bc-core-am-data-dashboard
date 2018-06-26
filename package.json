@@ -12,6 +12,7 @@
     "test": "npm run test-node && npm run test-browser"
   },
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "htmlhint": "^0.9.13",
