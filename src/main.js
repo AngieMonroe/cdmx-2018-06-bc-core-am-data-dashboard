@@ -1,1 +1,1 @@
-
+generacion.addEventListener("change", getData);
