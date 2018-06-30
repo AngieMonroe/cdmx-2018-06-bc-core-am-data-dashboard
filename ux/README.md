@@ -105,7 +105,12 @@ Sketch: ![Sketch1](/images/Sketch1.jpg)
 ![Sketch2](/images/Sketch2.jpg)
 ![Sketch3](/images/Sketch3.jpg)
 
-Prototipo en figma: ![Prototipo] (https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria)
+Prototipo en figma:
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=18%3A11)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=22%3A20)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=24%3A33)
+
 
 ### **5. User testing**
 (Si deseas validar tu propuesta, acércate a tu usuario y que te de feedback con el fin de mejorar tu producto en beneficio del negocio y de tu usuarix).
