@@ -115,5 +115,17 @@ Prototipo en figma:
 ### **5. User testing**
 (Si deseas validar tu propuesta, acércate a tu usuario y que te de feedback con el fin de mejorar tu producto en beneficio del negocio y de tu usuarix).
 ****
+Prototipado clickable para testing con TMs
+(https://marvelapp.com/31h936h)
 
+Observaciones aplicadas en la interfaz final:
+Agregar indicador con porcentaje general de avance en el LMS de la siguiente manera:
+Avance mayor al 90% 
+Avance menor al 60%
+Avance entre el 60% y 90%
 
+Utilizar logo actual en la interfaz final.
+
+Usar tipografía, color y estilos propios de Laboratoria. 
+
+Agregar botón en última pantalla que permita volver al menú de sedes y generaciones.
