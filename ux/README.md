@@ -92,8 +92,14 @@ Ya que será una plataforma común para las distintas sedes, deseamos crear un d
 (Esta es la fase creativa, donde se comienza a construir el Data dashboard con la información obtenida de las fases anteriores. Se reafirma crear la experiencia de usuario, donde la solución resuelve necesidades y facilita la vida)
 Nuestro diseño apunta a continuar fomentando el trabajo en equipo realizado por las TMs de Laboratoria, al ahorro de tiempo en el análisis de data y a agilizar el proceso de toma de decisiones por medio de un data dashboard que presente la data de la manera más útil y procesada posible.
 
-Arquitectura de la web (Planificación del contenido de la página web):
+Arquitectura de la información (Planificación del contenido de la página web):
+Estructura semántica
+(https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web)
+Contenido de la página
+(https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web?node-id=2%3A4)
+Conexiones y flujo
 (https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web?node-id=2%3A6)
+
 
 Sketch: ![Sketch1](/images/Sketch1.jpg)
 ![Sketch2](/images/Sketch2.jpg)
