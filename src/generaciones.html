@@ -25,11 +25,11 @@
     // Draw the pie chart for Variables y tipos de datos when Charts is loaded.
     google.charts.setOnLoadCallback(VariablesChart);
 
-    // Draw the pie chart for Sarah's pizza when Charts is loaded.
-    google.charts.setOnLoadCallback(drawSarahChart);
+    // Draw the pie chart for UX when Charts is loaded.
+    google.charts.setOnLoadCallback(UX);
 
-    // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-    google.charts.setOnLoadCallback(drawAnthonyChart);
+    // Draw the pie chart for the Avance de alumnas when Charts is loaded.
+    google.charts.setOnLoadCallback(avanceDeAlumnas);
 
     // Callback that draws the pie chart for Introducción a la programación.
     function IntroduccionChart() {
@@ -80,10 +80,10 @@
       chart.draw(data, options);
     }
 
-    // Callback that draws the pie chart for Sarah's pizza.
-    function drawSarahChart() {
+    // Callback that draws the pie chart for UX.
+    function UX() {
 
-      // Create the data table for Sarah's pizza.
+      // Create the data table for UX.
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Tema');
       data.addColumn('number', 'Avance');
@@ -92,7 +92,7 @@
         ['Porcentaje restante', 50],
       ]);
 
-      // Set options for Sarah's pie chart.
+      // Set options for UX pie chart.
       var options = {
         title: 'UX. Experiencia de usuarix',
         width: 400,
@@ -100,15 +100,15 @@
         colors: ['#FFE521', '#ffeeb8']
       };
 
-      // Instantiate and draw the chart for Sarah's pizza.
-      var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+      // Instantiate and draw the chart for UX.
+      var chart = new google.visualization.PieChart(document.getElementById('ux-div'));
       chart.draw(data, options);
     }
 
-    // Callback that draws the pie chart for Anthony's pizza.
-    function drawAnthonyChart() {
+    // Callback that draws the pie chart for Avance de alumnas.
+    function avanceDeAlumnas() {
 
-      // Create the data table for Anthony's pizza.
+      // Create the data table for Avance de alumnas.
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Tema');
       data.addColumn('number', 'Avance');
@@ -126,8 +126,8 @@
         colors: ['#FFE521', '#ffeeb8', '#ffc107']
       };
 
-      // Instantiate and draw the chart for Anthony's pizza.
-      var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+      // Instantiate and draw the chart for Avance de alumnas.
+      var chart = new google.visualization.PieChart(document.getElementById('avance-div'));
       chart.draw(data, options);
     }
 
@@ -222,10 +222,10 @@
             <table>
               <tr>
                 <td>
-                  <div id="Sarah_chart_div"></div>
+                  <div id="ux-div"></div>
                 </td>
                 <td>
-                  <div id="Anthony_chart_div"></div>
+                  <div id="avance-div"></div>
                 </td>
               </tr>
             </table>
@@ -233,7 +233,7 @@
         </section>
         <section class="col s12">
           <button id="alumnas" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action">
-            Alumnas
+            Alumnas > >
           </button>
         </section>
     </main>
