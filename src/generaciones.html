@@ -10,28 +10,70 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Gráfica-->
+    </script>
+    <!--Google Charts-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+
+      // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+      // Draw the pie chart for Sarah's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(IntroduccionChart);
 
-        var data = google.visualization.arrayToDataTable([
-          ['Porcentaje de avance', 'Porcentaje numérico'],
-          ['Avance promedio',     100],
+      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(VariablesChart);
+
+      // Callback that draws the pie chart for Sarah's pizza.
+      function IntroduccionChart() {
+
+        // Create the data table for Sarah's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Tema');
+        data.addColumn('number', 'Avance');
+        data.addRows([
+          ['Avance promedio', 100],
         ]);
 
-        var options = {
-          title: 'Introducción a programación'
-        };
+        // Set options for Sarah's pie chart.
+        var options = {title:'Introducción a la programación',
+                       width:400,
+                       height:300,
+                       colors: ['#FFE521'],
+                       };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('intro-div'));
         chart.draw(data, options);
-        
       }
+
+      // Callback that draws the pie chart for Anthony's pizza.
+      function VariablesChart() {
+
+        // Create the data table for Anthony's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Tema');
+        data.addColumn('number', 'Avance');
+        data.addRows([
+          ['Avance promedio', 15],
+          ['Porcentaje restante', 85],
+        ]);
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'Variables y tipos de datos',
+                       width:400,
+                       height:300,
+                       colors: ['#FFE521','#acece6']
+                       };
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('variables-div'));
+        chart.draw(data, options);
+      }
+
+
+
+      
     </script>
   </head>
   <body>
@@ -97,21 +139,21 @@
               </div>
               <h5 class="center-align">Avance general: 75%</h5>
               </div>
-            <div class="col s4">
+            <div class="center-align col s5 offset-s1">
               <!--Gráfica-->
-              <div class="col s5 offset-s4" id="piechart" style="width: 30em; height: 15em;"></div>
+              <div id="intro-div"></div>           
             </div>
-            <div class="col s7 offset-s5">
-              <h6 class="center-align">Variables y <br> tipos de datos</h6>
+            <div class="center-align col s5 offset-s6">
               <!--Gráfica-->
+              <div id="variables-div"></div>
             </div>
-            <div class="col s7 offset-s5">
+            <div class="center-align col s5 offset-s6">
               <h6 class="center-align">UX</h6>
               <!--Gráfica-->
             </div>
             </section>
             <section class="row">
-            <div class="col s6 offset-s5">
+                <div class="center-align col s5 offset-s6">
               <h6 class="center-align">Avance de alumnas <br> + 90% <br> 60% - 90% <br> - 60%</h6>
               <!--Gráfica-->
             </div>
