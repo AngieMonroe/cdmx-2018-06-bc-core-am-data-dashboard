@@ -10,6 +10,29 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Gráfica-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Porcentaje de avance', 'Porcentaje numérico'],
+          ['Avance promedio',     100],
+        ]);
+
+        var options = {
+          title: 'Introducción a programación'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+        
+      }
+    </script>
   </head>
   <body>
     <section class='container-fluid foundFont'>
@@ -70,25 +93,25 @@
               <h5 class="center-align agrandar-fuente">60</h5>
               <h5 class="center-align">Estudiantes activas</h5><br>
               <div class="progress">
-                <div class="determinate" style="width: 75%; background-color: #FFE521;"></div>
+                <div class="determinate" id="progreso"></div>
               </div>
               <h5 class="center-align">Avance general: 75%</h5>
               </div>
-            <div class="col s4 offset-s5">
-              <h6 class="center-align">Introducción <br> a <br> programación</h6>
+            <div class="col s4">
               <!--Gráfica-->
+              <div class="col s5 offset-s4" id="piechart" style="width: 30em; height: 15em;"></div>
             </div>
-            <div class="col s4 offset-s5">
+            <div class="col s7 offset-s5">
               <h6 class="center-align">Variables y <br> tipos de datos</h6>
               <!--Gráfica-->
             </div>
-            <div class="col s4 offset-s5">
+            <div class="col s7 offset-s5">
               <h6 class="center-align">UX</h6>
               <!--Gráfica-->
             </div>
             </section>
             <section class="row">
-            <div class="col s4 offset-s5">
+            <div class="col s6 offset-s5">
               <h6 class="center-align">Avance de alumnas <br> + 90% <br> 60% - 90% <br> - 60%</h6>
               <!--Gráfica-->
             </div>
