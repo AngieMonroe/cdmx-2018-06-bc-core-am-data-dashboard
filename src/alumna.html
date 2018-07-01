@@ -1,56 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css" />
-    <title>Data Dashboard</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <body>
-    <section class='container-fluid foundFont'>
-      <header class='row'>
-        <section class='col s3'>
-          <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
-          <img class='responsive-img logo' src="../images/logo2018.png"> 
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css" />
+  <title>Data Dashboard</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Google Charts-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    // Load Charts and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Draw the pie chart for Introducción a la programación when Charts is loaded.
+    google.charts.setOnLoadCallback(IntroduccionChart);
+
+    // Callback that draws the pie chart for Introducción a la programación.
+    function IntroduccionChart() {
+
+      // Create the data table for Introducción a la programación.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 100],
+      ]);
+
+      // Set options for Introducción a la programación pie chart.
+      var options = {
+        title: 'Introducción a programación',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521'],
+      };
+
+      // Instantiate and draw the chart for Introducción a la programación.
+      var chart = new google.visualization.PieChart(document.getElementById('intro-div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+  <section class='container-fluid foundFont'>
+    <header class='row'>
+      <section class='col s3'>
+        <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
+        <img class='responsive-img logo' src="../images/logo2018.png">
+      </section>
+      <section class='col s9 background-amarillo'>
+        <h3 class='pt1'>REPORTES</h3>
+      </section>
+    </header>
+    <main class="row">
+      <aside class='col s3'>
+        <section class='col s2 offset-s1'>
+          <i class="material-icons">perm_identity</i>
         </section>
-        <section class='col s9 background-amarillo'>
-          <h3 class='pt1'>REPORTES</h3>
+        <section class='col s9 usuaria'>
+          LUCÍA RAMÍREZ
+          <br> e-mail@example.com
         </section>
-      </header>
-      <main class="row">
-        <aside class='col s3'>
-          <section class='col s2 offset-s1'>
-            <i class="material-icons">perm_identity</i>
-          </section>    
-          <section class='col s9 usuaria'>
-            LUCÍA RAMÍREZ <br> e-mail@example.com
+        <ul class="col s12 collection">
+          <li class="collection-item active" style="background-color: #FFE521; color: #333333;">
+            <i class="material-icons">assessment</i> REPORTES</li>
+          <li class="collection-item">
+            <i class="material-icons">import_contacts</i> MIS CURSOS</li>
+          <li class="collection-item">
+            <i class="material-icons">settings</i> CONFIGURACIÓN</li>
+          <li class="collection-item">
+            <i class="material-icons">input</i> CERRAR SESIÓN</li>
+        </ul>
+      </aside>
+      <section class="col s9">
+        <section class="col s12">
+          <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
+          <p class="col s4 offset-s1">Nombre:</p>
+          <p class="col s4 offset-s1">E-mail:</p>
+          <p class="col s4 offset-s1">Campus:</p>
+          <p class="col s4 offset-s1">Generación:</p>
+        </section>
+        <section class="col s12">
+          <section class="col s2">
+            <h6 style="margin-top: 2em;">Introducción a programación</h6>
+            <br>
+            <p>Horas invertidas: 90%</p>
+            <div class="progress">
+              <div class="determinate" style="width: 90%" id="progreso"></div>
+            </div>
           </section>
-            <ul class="col s12 collection">
-              <li class="collection-item active" style= "background-color: #FFE521; color: #333333;"><i class="material-icons">assessment</i> REPORTES</li>
-              <li class="collection-item"><i class="material-icons">import_contacts</i> MIS CURSOS</li>
-              <li class="collection-item"><i class="material-icons">settings</i> CONFIGURACIÓN</li>
-              <li class="collection-item"><i class="material-icons">input</i> CERRAR SESIÓN</li>
-            </ul>
-        </aside> 
-        <section class="col s9">
-          <section class="col s6">
-              <i class="col s2 material-icons" style="font-size: 8em;">account_box</i>
-              <p class="col s4 offset-s1" style="display: inline-block;">Nombre:</p>
-              <p class="col s4 offset-s1" style="display: inline-block;">Nombre:</p>
-              <p class="col s4 offset-s1" style="display: inline-block;">Nombre:</p>
-              <p class="col s4 offset-s1" style="display: inline-block;">Nombre:</p>
-          </section>
+          <div class="col s2" id="intro-div"></div>
+          <table class="col s5 offset-s2">
+            <thead>
+              <tr>
+                <th>% Completado</th>
+                <th>Modalidad</th>
+                <th>Duración</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </section>
-    </main>  
-   </section>
+        <section class="col s12">
+          <div class="col s6" id="intro-div"></div>
+        </section>
+        <section class="col s12">
+          <div class="col s6" id="intro-div"></div>
+        </section>
+      </section>
+    </main>
+  </section>
   <!--Enlaces a funcionalidad -->
   <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
- <script src="data.js"></script>
- <script src="main.js"></script>
- </body>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
