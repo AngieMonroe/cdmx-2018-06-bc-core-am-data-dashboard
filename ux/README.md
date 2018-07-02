@@ -92,15 +92,40 @@ Ya que será una plataforma común para las distintas sedes, deseamos crear un d
 (Esta es la fase creativa, donde se comienza a construir el Data dashboard con la información obtenida de las fases anteriores. Se reafirma crear la experiencia de usuario, donde la solución resuelve necesidades y facilita la vida)
 Nuestro diseño apunta a continuar fomentando el trabajo en equipo realizado por las TMs de Laboratoria, al ahorro de tiempo en el análisis de data y a agilizar el proceso de toma de decisiones por medio de un data dashboard que presente la data de la manera más útil y procesada posible.
 
-Arquitectura de la web (Planificación del contenido de la página web):
+Arquitectura de la información (Planificación del contenido de la página web):
+Estructura semántica
+(https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web)
+Contenido de la página
+(https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web?node-id=2%3A4)
+Conexiones y flujo
 (https://www.figma.com/file/UQkbigUcd1EVnYG8aAJZcHLx/Arquitectura-de-la-web?node-id=2%3A6)
+
 
 Sketch: ![Sketch1](/images/Sketch1.jpg)
 ![Sketch2](/images/Sketch2.jpg)
 ![Sketch3](/images/Sketch3.jpg)
 
-Prototipo en figma: ![Prototipo] (https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria)
+Prototipo en figma:
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=18%3A11)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=22%3A20)
+(https://www.figma.com/file/Uk4BC3dYeq2vvBGwVDN1OXFa/Data-Dashboard-Laboratoria?node-id=24%3A33)
+
 
 ### **5. User testing**
 (Si deseas validar tu propuesta, acércate a tu usuario y que te de feedback con el fin de mejorar tu producto en beneficio del negocio y de tu usuarix).
 ****
+Prototipado clickable para testing con TMs
+(https://marvelapp.com/31h936h)
+
+Observaciones aplicadas en la interfaz final:
+Agregar indicador con porcentaje general de avance en el LMS de la siguiente manera:
+Avance mayor al 90% 
+Avance menor al 60%
+Avance entre el 60% y 90%
+
+Utilizar logo actual en la interfaz final.
+
+Usar tipografía, color y estilos propios de Laboratoria. 
+
+Agregar botón en última pantalla que permita volver al menú de sedes y generaciones.
