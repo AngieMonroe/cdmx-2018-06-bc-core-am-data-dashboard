@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css" />
+  <title>Data Dashboard</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </script>
+  <!--Google Charts-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    // Load Charts and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Draw the pie chart for Introducción a la programación when Charts is loaded.
+    google.charts.setOnLoadCallback(IntroduccionChart);
+
+    // Draw the pie chart for Variables y tipos de datos when Charts is loaded.
+    google.charts.setOnLoadCallback(VariablesChart);
+
+    // Draw the pie chart for UX when Charts is loaded.
+    google.charts.setOnLoadCallback(UX);
+
+    // Draw the pie chart for the Avance de alumnas when Charts is loaded.
+    google.charts.setOnLoadCallback(avanceDeAlumnas);
+
+    // Callback that draws the pie chart for Introducción a la programación.
+    function IntroduccionChart() {
+
+      // Create the data table for Introducción a la programación.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 100],
+      ]);
+
+      // Set options for Introducción a la programación pie chart.
+      var options = {
+        title: 'Introducción a la programación',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521'],
+      };
+
+      // Instantiate and draw the chart for Introducción a la programación.
+      var chart = new google.visualization.PieChart(document.getElementById('intro-div'));
+      chart.draw(data, options);
+    }
+
+    // Callback that draws the pie chart for Variables y tipos de datos.
+    function VariablesChart() {
+
+      // Create the data table for Variables y tipos de datos.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 15],
+        ['Porcentaje restante', 85],
+      ]);
+
+      // Set options for Variables y tipos de datos pie chart.
+      var options = {
+        title: 'Variables y tipos de datos',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521', '#e0e0e0']
+      };
+
+      // Instantiate and draw the chart for Variables y tipos de datos.
+      var chart = new google.visualization.PieChart(document.getElementById('variables-div'));
+      chart.draw(data, options);
+    }
+
+    // Callback that draws the pie chart for UX.
+    function UX() {
+
+      // Create the data table for UX.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 50],
+        ['Porcentaje restante', 50],
+      ]);
+
+      // Set options for UX pie chart.
+      var options = {
+        title: 'UX. Experiencia de usuarix',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521', '#e0e0e0']
+      };
+
+      // Instantiate and draw the chart for UX.
+      var chart = new google.visualization.PieChart(document.getElementById('ux-div'));
+      chart.draw(data, options);
+    }
+
+    // Callback that draws the pie chart for Avance de alumnas.
+    function avanceDeAlumnas() {
+
+      // Create the data table for Avance de alumnas.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['+ 90%', 50],
+        ['60% - 90%', 25],
+        ['- 60%', 25]
+      ]);
+
+      // Set options for Anthony's pie chart.
+      var options = {
+        title: 'Avance de alumnas',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521', '#ffeeb8', '#ffc107']
+      };
+
+      // Instantiate and draw the chart for Avance de alumnas.
+      var chart = new google.visualization.PieChart(document.getElementById('avance-div'));
+      chart.draw(data, options);
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <section class='container-fluid foundFont'>
+    <header class='row'>
+      <section class='col s3'>
+        <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
+        <img class='responsive-img logo' src="../images/logo2018.png">
+      </section>
+      <section class='col s9 background-amarillo'>
+        <h3 class='pt1'>REPORTES</h3>
+      </section>
+    </header>
+    <main class="row">
+      <aside class='col s3'>
+        <section class='col s2 offset-s1'>
+          <i class="material-icons">perm_identity</i>
+        </section>
+        <section class='col s9 usuaria'>
+          LUCÍA RAMÍREZ
+          <br> e-mail@example.com
+        </section>
+        <ul class="col s12 collection">
+          <li class="collection-item option active" style="background-color: #FFE521; color: #333333;">
+            <a href="index.html"><i class="material-icons">assessment</i> REPORTES</li></a>
+          <li class="collection-item">
+            <i class="material-icons">import_contacts</i> MIS CURSOS</li>
+          <li class="collection-item">
+            <i class="material-icons">settings</i> CONFIGURACIÓN</li>
+          <li class="collection-item">
+            <i class="material-icons">input</i> CERRAR SESIÓN</li>
+        </ul>
+      </aside>
+      <section class="col s9">
+        <!--¿Cambiar los selects por inputs con la opción seleccionada en los selects de index.html?-->
+        <section class="col s6">
+          <h4>Sede elegida</h4>
+        </section>
+        <section class="col s6">
+          <h4>Generación elegida</h4>
+        </section>
+        <section class="col s12">
+        </section>
+        <section class="row">
+          <div class="col s4 offset-s1" id="e-activas">
+            <h5 class="center-align agrandar-fuente">60</h5>
+            <h5 class="center-align">Estudiantes activas</h5>
+            <br>
+            <div class="progress">
+              <div class="determinate" style="width: 75%" id="progreso"></div>
+            </div>
+            <h5 class="center-align">Avance general: 75%</h5>
+          </div>
+          <div class="center-align col s5">
+            <!--Gráfica-->
+            <table>
+              <tr>
+                <td>
+                  <div id="intro-div"></div>
+                </td>
+                <td>
+                  <div id="variables-div"></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href="alumnas.html"><button id="alumnas" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em;">
+              ALUMNAS 
+            </button></a>
+          <div class="center-align col s5 offset-s5">
+            <!--Gráfica-->
+            <table>
+              <tr>
+                <td>
+                  <div id="ux-div"></div>
+                </td>
+                <td>
+                  <div id="avance-div"></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <section class="col s12">
+          <a href="index.html"><button id="reiniciar" class="col s2 btn waves-effect waves-light" type="submit" name="action2">
+              <i class="material-icons">keyboard_arrow_left keyboard_arrow_left</i>
+          </button></a>
+      </section>
+    </main>
+    </section>
+    <!--Enlaces a funcionalidad -->
+    <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
