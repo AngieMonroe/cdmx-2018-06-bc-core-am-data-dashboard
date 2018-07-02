@@ -21,6 +21,12 @@
     // Draw the pie chart for Introducción a la programación when Charts is loaded.
     google.charts.setOnLoadCallback(IntroduccionChart);
 
+    // Draw the pie chart for Variables y tipos de datos when Charts is loaded.
+    google.charts.setOnLoadCallback(VariablesChart);
+
+    // Draw the pie chart for UX when Charts is loaded.
+    google.charts.setOnLoadCallback(UX);
+
     // Callback that draws the pie chart for Introducción a la programación.
     function IntroduccionChart() {
 
@@ -42,6 +48,56 @@
 
       // Instantiate and draw the chart for Introducción a la programación.
       var chart = new google.visualization.PieChart(document.getElementById('intro-div'));
+      chart.draw(data, options);
+    }
+
+    // Callback that draws the pie chart for Variables y tipos de datos.
+    function VariablesChart() {
+
+      // Create the data table for Variables y tipos de datos.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 15],
+        ['Porcentaje restante', 85],
+      ]);
+
+      // Set options for Variables y tipos de datos pie chart.
+      var options = {
+        title: 'Variables y tipos de datos',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521', '#e0e0e0']
+      };
+
+      // Instantiate and draw the chart for Variables y tipos de datos.
+      var chart = new google.visualization.PieChart(document.getElementById('variables-div'));
+      chart.draw(data, options);
+    }
+
+    // Callback that draws the pie chart for UX.
+    function UX() {
+
+      // Create the data table for UX.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tema');
+      data.addColumn('number', 'Avance');
+      data.addRows([
+        ['Avance promedio', 50],
+        ['Porcentaje restante', 50],
+      ]);
+
+      // Set options for UX pie chart.
+      var options = {
+        title: 'UX. Experiencia de usuarix',
+        width: 400,
+        height: 300,
+        colors: ['#FFE521', '#e0e0e0']
+      };
+
+      // Instantiate and draw the chart for UX.
+      var chart = new google.visualization.PieChart(document.getElementById('ux-div'));
       chart.draw(data, options);
     }
   </script>
@@ -69,7 +125,7 @@
         </section>
         <ul class="col s12 collection">
           <li class="collection-item active" style="background-color: #FFE521; color: #333333;">
-            <i class="material-icons">assessment</i> REPORTES</li>
+              <a href="index.html"><i class="material-icons">assessment</i> REPORTES</li></a>
           <li class="collection-item">
             <i class="material-icons">import_contacts</i> MIS CURSOS</li>
           <li class="collection-item">
@@ -97,6 +153,7 @@
           </section>
           <div class="col s2" id="intro-div"></div>
           <table class="col s5 offset-s2">
+              <caption><h6>Subtemas</h6></caption>
             <thead>
               <tr>
                 <th>% Completado</th>
@@ -125,53 +182,45 @@
           </table>
         </section>
         <section class="col s12">
-          <div class="col s6" id="intro-div"></div>
+          <section class="col s2">
+            <h6 style="margin-top: 2em;">Variables y tipos de datos</h6>
+            <br>
+            <p>Horas invertidas: 30%</p>
+            <div class="progress">
+              <div class="determinate" style="width: 30%" id="progreso"></div>
+            </div>
+          </section>
+          <div class="col s2" id="variables-div"></div>
+          <table class="col s5 offset-s2">
+              <caption><h6>Subtemas</h6></caption>
+            <thead>
+              <tr>
+                <th>% Completado</th>
+                <th>Modalidad</th>
+                <th>Duración</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </section>
         <section class="col s12">
-            <section class="col s2">
-              <h6 style="margin-top: 2em;">Variables y tipos de datos</h6>
-              <br>
-              <p>Horas invertidas: 30%</p>
-              <div class="progress">
-                <div class="determinate" style="width: 30%" id="progreso"></div>
-              </div>
-            </section>
-            <div class="col s2" id="intro-div"></div>
-            <table class="col s5 offset-s2">
-              <thead>
-                <tr>
-                  <th>% Completado</th>
-                  <th>Modalidad</th>
-                  <th>Duración</th>
-                </tr>
-              </thead>
-  
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-          <section class="col s12">
-            <div class="col s6" id="intro-div"></div>
-          </section>
-          <section class="col s12">
-            <div class="col s6" id="intro-div"></div>
-          </section>
-          <section class="col s12">
           <section class="col s2">
             <h6 style="margin-top: 2em;">UX. Experiencia de usuario</h6>
             <br>
@@ -180,8 +229,9 @@
               <div class="determinate" style="width: 60%" id="progreso"></div>
             </div>
           </section>
-          <div class="col s2" id="intro-div"></div>
+          <div class="col s2" id="ux-div"></div>
           <table class="col s5 offset-s2">
+              <caption><h6>Subtemas</h6></caption>
             <thead>
               <tr>
                 <th>% Completado</th>
@@ -210,11 +260,11 @@
           </table>
         </section>
         <section class="col s12">
-          <div class="col s6" id="intro-div"></div>
+        <a href="alumnas.html"><button id="reiniciar" class="col s2  btn waves-effect waves-light" type="submit" name="action2">
+            <i class="material-icons">keyboard_arrow_left keyboard_arrow_left</i>
+        </button></a>
         </section>
-        <section class="col s12">
-          <div class="col s6" id="intro-div"></div>
-        </section>
+      </section>
       </section>
     </main>
   </section>
