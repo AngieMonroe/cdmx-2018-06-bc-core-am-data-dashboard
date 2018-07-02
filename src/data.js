@@ -9,12 +9,25 @@ let count = document.getElementById("acount");
 let name = "";
 let email = "";
 let completedPercentage = 0;
+let status = 0;
+let topics = "";
+let subtopics = "";
 let completedPercentageTema = 0;
 let percentageDuration = 0;
 let percentageDurationTema = 0;
 let type = 0;
 let duration = 0;
 let completedPercentageGeneral = 0;
+const stats = {
+    "students" : []
+ }
+let stats1 = new Object();
+let orderBy = "Nombre";
+let orderDirection = "Ascendente";
+const orderStats = {
+    "students" : []
+ }
+let search = "Bernarda Natasha";
 
 ////////////////////////////////////////////////////////////////////////////// Función computeStudentsStats(laboratoria)
 function getData() {
@@ -45,9 +58,10 @@ window.computeStudentsStats= (laboratoria) => {
       status = "> 90";
     }
     console.log (status)
+
     for (let tema in laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas) {
-      //preguntarle a alguien que pedo
-      console.log (tema)
+      topics = tema;
+      console.log (topics)
       completedPercentageTema = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].porcentajeCompletado);
       console.log (completedPercentageTema)
       percentageDuration = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].duracionTemaCompletado);
@@ -57,10 +71,9 @@ window.computeStudentsStats= (laboratoria) => {
       percentageDuration = Math.round((percentageDuration * 100) / percentageDurationTema);
       console.log (percentageDuration)
 
-
-
-      for (var subtema in laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas) {
-        console.log (subtema)
+      for (let subtema in laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas) {
+        subtopics = subtema;
+        console.log (subtopics)
         type = laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas[subtema].tipo;
         console.log(type)
         // solicitan un dato que es el porcentaje de completitud, pero solo viene si se completo o no es decir que apareceria 100% o 0%?
@@ -74,13 +87,103 @@ window.computeStudentsStats= (laboratoria) => {
           console.log (duration)
         }
       }
-      stats.students.push({"name" : name, "email" : email, "campus" : campus, "generation" : generation});
-    }
-    //stats.topics.push({"status" : status, "completedPercentage" : completedPercentage});
-    //stats.subtopics.push({"type" : type, "duration" : duration });
-    console.log (stats.students)
-  };
+      stats.students.push({
+        "name" : name,
+        "email" : email,
+        "campus" : campus,
+        "generation" : generation,
+        "stats" : {
+          "status" : status,
+          "completedPercentage" : completedPercentage,
+          "topics": {
+            "temas":{
+              "01-Introduccion-a-programacion": {
+                "completedPercentageTema" : completedPercentageTema,
+                "percentageDurationTema" : percentageDurationTema,
+                "subtopics" : {
+                  "00-bienvenida-orientacion" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "01-desarrollo-profesional" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "02-por-que-aprender-a-programar" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "03-tu-primer-sitio" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "04-quiz" : {
+                    "type" : type,
+                    "duration" : duration
+                  }
+                }
+              },
 
+              "02-Variables-y-tipo-de-datos": {
+                "completedPercentageTema" : completedPercentageTema,
+                "percentageDurationTema" : percentageDurationTema,
+                "subtopics": {
+                  "00-bienvenida-orientacion" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "01-desarrollo-profesional" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "02-por-que-aprender-a-programar" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "03-tu-primer-sitio" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "04-quiz" : {
+                    "type" : type,
+                    "duration" : duration
+                  }
+              }
+            },
+              "03-UX":{
+                "completedPercentageTema" : completedPercentageTema,
+                "percentageDurationTema" : percentageDurationTema,
+                "subtemas":{
+                  "00-bienvenida-orientacion" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "01-desarrollo-profesional" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "02-por-que-aprender-a-programar" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "03-tu-primer-sitio" : {
+                    "type" : type,
+                    "duration" : duration
+                  },
+                  "04-quiz" : {
+                    "type" : type,
+                    "duration" : duration
+                  }
+              }
+            }
+        }
+    }
+    }
+  });
+}
+    console.log (stats.students)
+
+}
 
 
 
@@ -101,14 +204,47 @@ window.computeGenerationsStats = (laboratoria) => {
     console.log (campus);
     generation = generationBox.value;
     console.log (generation);
-    students = laboratoria[campus].generacion[generation];
-    count = students.estudiantes.length;
+    count = laboratoria[campus].generacion[generation].estudiantes.length;
     console.log(count);
     for (let valor in laboratoria[campus].generacion[generation].estudiantes){
-      average += parseInt(students.estudiantes[valor].progreso.porcentajeCompletado);
+      average += parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
       }
   average = Math.round((average / count));
   console.log(average)
   computeGeneration.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
   console.log(computeGeneration.generation)
 };
+
+//////////////////////////////////////////////////////////////////////////////// Función sortStudents
+
+window.sortStudents = (students, orderBy, orderDirection) => {
+  if (orderBy === "Nombre" && orderDirection === "Ascendente"){
+    orderStats = stats.students.name.sort();
+    console.log (orderStats)
+  } else if (orderBy === "Nombre" && orderDirection === "Descendente"){
+    stats.students.name.sort();
+    orderStats = stats.students.name.reverse();
+  } else if (orderBy === "Porcentaje" && orderDirection === "Ascendente") {
+    function orderAsc(a,b){
+    return a-b;
+    }
+      //Checar la ruta de acuerdo al objeto creado en la función 1
+    orderStats = stats.students.completedPercetage.sort(orderAsc);
+  } else if (orderBy === "Porcentaje" && orderDirection === "Descendente") {
+    function orderAsc(a,b){
+    return a-b;
+  }
+      //Checar la ruta de acuerdo al objeto creado en la función 1
+      stats.students.completedPercetage.sort(orderAsc);
+      Orderstats = stats.students.completedPercetage.reverse();
+}
+}
+
+//////////////////////////////////////////////////////////////////////////////// Función filterStudents
+
+window.filterStudents = (students, search) => {
+  let searchStudents = stats.students.filter(function (el) {
+    return (el.name == "Bernarda Natasha")
+  });
+console.log (searchStudents)
+}
