@@ -4,8 +4,8 @@
 const link = "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json"
 let campus = document.getElementById("campusBox");
 let generation = document.getElementById("generationBox");
-let average = document.getElementById("average");
-let count = document.getElementById("acount");
+let average = 0;
+let count = 0;
 let name = "";
 let email = "";
 let completedPercentage = 0;
@@ -21,7 +21,9 @@ let completedPercentageGeneral = 0;
 const stats = {
     "students" : []
  }
-let stats1 = new Object();
+const computeGeneration = {
+    "generation" : []
+}
 let orderBy = "Nombre";
 let orderDirection = "Ascendente";
 const orderStats = {
@@ -193,26 +195,29 @@ function getData1() {
     .then(response => response.json())
     .then(laboratoria => {
       computeGenerationsStats(laboratoria);
+
 })
-}
+};
 
 window.computeGenerationsStats = (laboratoria) => {
-  const computeGeneration = {
-     "generation" : []
-  }
-    campus = campusBox.value;
-    console.log (campus);
-    generation = generationBox.value;
-    console.log (generation);
+     //let generationList = document.getElementById("id")
+     //let crearLista = document.createElement("p")
+     //crearLista.innerHTML = //quien tiene lo que quiero imprimir
+     //generationList.appendChild(crearLista)
+    campus = campusBox.value.toLowerCase();
+    //console.log (campus);
+    generation = generationBox.value.toLowerCase();
+    //console.log (generation)
     count = laboratoria[campus].generacion[generation].estudiantes.length;
-    console.log(count);
+    //console.log(count);
     for (let valor in laboratoria[campus].generacion[generation].estudiantes){
       average += parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
       }
   average = Math.round((average / count));
-  console.log(average)
+  //console.log(average)
   computeGeneration.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
   console.log(computeGeneration.generation)
+
 };
 
 //////////////////////////////////////////////////////////////////////////////// Función sortStudents
