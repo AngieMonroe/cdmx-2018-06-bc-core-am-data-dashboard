@@ -4,8 +4,8 @@
 const link = "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json"
 let campus = document.getElementById("campusBox");
 let generation = document.getElementById("generationBox");
-let average = document.getElementById("average");
-let count = document.getElementById("acount");
+let average = 0;
+let count = 0;
 let name = "";
 let email = "";
 let completedPercentage = 0;
@@ -21,7 +21,9 @@ let completedPercentageGeneral = 0;
 const stats = {
     "students" : []
  }
-let stats1 = new Object();
+const computeGeneration = {
+    "generation" : []
+}
 let orderBy = "Nombre";
 let orderDirection = "Ascendente";
 const orderStats = {
@@ -193,26 +195,48 @@ function getData1() {
     .then(response => response.json())
     .then(laboratoria => {
       computeGenerationsStats(laboratoria);
+
 })
-}
+};
 
 window.computeGenerationsStats = (laboratoria) => {
-  const computeGeneration = {
-     "generation" : []
-  }
-    campus = campusBox.value;
-    console.log (campus);
-    generation = generationBox.value;
-    console.log (generation);
+  let campusDom = document.getElementById("campusPrint")
+  let generationDom = document.getElementById("generationPrint")
+  let studentsActDom = document.getElementById("e-active")
+  let studentsDom = document.getElementById("studentsList")
+
+    campus = campusBox.value.toLowerCase();
+    //console.log (campus);
+    generation = generationBox.value.toLowerCase();
+    //console.log (generation)
     count = laboratoria[campus].generacion[generation].estudiantes.length;
-    console.log(count);
+    //console.log(count);
     for (let valor in laboratoria[campus].generacion[generation].estudiantes){
       average += parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
       }
   average = Math.round((average / count));
-  console.log(average)
-  computeGeneration.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
-  console.log(computeGeneration.generation)
+  //console.log(average)
+  computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
+  console.log(computeGeneration.generation[0].campus)
+
+  campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
+  generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
+  studentsActDom.innerHTML = `
+  <h5 class="center-align agrandar-fuente">${computeGeneration.generation[0].count}</h5>
+  <h5 class="center-align">Estudiantes activas</h5>
+  <br>
+  <div class="progress">
+    <div class="determinate" style="width: 75%" id="progreso"></div>
+  </div>
+  <h5 class="center-align">Avance general: ${computeGeneration.generation[0].average}%</h5>
+  `
+  studentsDom.innerHTML = `<button id="studentsList" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em;">
+      ALUMNAS
+    </button> `
+
+
+
+  return computeGeneration.generation;
 };
 
 //////////////////////////////////////////////////////////////////////////////// Función sortStudents

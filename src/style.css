@@ -1,29 +1,29 @@
 .foundFont{
     font-family: museo-sans, Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   .pt1{
-    padding-top: 0.5em;  
+    padding-top: 0.5em;
   }
-  
+
   .background-amarillo{
     background-color: #FFE521;
   }
-  
+
   .logo{
     padding-top: 2em;
   }
-    
+
   .usuaria{
     margin-bottom: 2em;
   }
-  
+
   #action{
     background-color:#FFE521;
     color: #333333;
   }
-  
-  #alumnas{
+
+  #studentsList{
     background-color:#FFE521;
     color: #333333;
   }
@@ -32,12 +32,12 @@
     font-size: 8em;
   }
 
-  #e-activas{
+  #e-active{
     background-color:#FFFFF0;
   }
 
   #progreso{
-    width: 75%; 
+    width: 75%;
     background-color: #FFE521;
   }
 
@@ -45,4 +45,3 @@
     background-color:#FFE521;
     color: #333333;
   }
-  

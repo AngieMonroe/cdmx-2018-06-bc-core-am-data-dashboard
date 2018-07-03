@@ -16,7 +16,7 @@
       <header class='row'>
         <section class='col s3'>
           <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
-          <img class='responsive-img logo' src="../images/logo2018.png"> 
+          <img class='responsive-img logo' src="../images/logo2018.png">
         </section>
         <section class='col s9 background-amarillo'>
           <h3 class='pt1'>REPORTES</h3>
@@ -26,7 +26,7 @@
         <aside class='col s3'>
           <section class='col s2 offset-s1'>
             <i class="material-icons">perm_identity</i>
-          </section>    
+          </section>
           <section class='col s9 usuaria'>
             LUCÍA RAMÍREZ <br> e-mail@example.com
           </section>
@@ -37,36 +37,88 @@
               <li class="collection-item"><i class="material-icons">settings</i> CONFIGURACIÓN</li>
               <li class="collection-item"><i class="material-icons">input</i> CERRAR SESIÓN</li>
             </ul>
-        </aside> 
-          <section class="col s9">
-            <section class="col s9">
-              <h4>SEDE</h4>
-            <div class="input-field col s12">
-              <select style="display: block;" id="sede">
-                  <option value="" disabled selected>Elige una...</option>
-                  <option value="generaciones.html">Lima</option>
-                  <option value="2">México</option>
-                  <option value="3">Santiago</option>
+        </aside>
+          <section class="col s7">
+            <section class="col s7">
+              <h4>Sede</h4>
+            <div class="input-field col s8">
+              <select style="display: block;" id="campusBox">
+                  <option disabled selected>Elige una...</option>
+                  <option>Lima</option>
+                  <option>México</option>
+                  <option>Santiago</option>
               </select>
-            </div>                  
-            </section> 
-          <section class="col s9">
-              <h4>GENERACIÓN</h4>
-            <div class="input-field col s12">
-              <select style="display: block;" id="generacion">
-                  <option value="" disabled selected>Elige una...</option>
-                  <option value="1">Tercera</option>
-                  <option value="2">Cuarta</option>
-                  <option value="3">Quinta</option>
+            </div>
+            </section>
+          <section class="col s7">
+              <h4>Generación</h4>
+            <div class="input-field col s8">
+              <select style="display: block;" id="generationBox">
+                  <option disabled selected>Elige una...</option>
+                  <option>Tercera</option>
+                  <option>Cuarta</option>
+                  <option>Quinta</option>
               </select>
-            </div>       
-          </section>  
+            </div>
+            </section>
+          </section>
+
+          <section class="col s7">
+            <!--¿Cambiar los selects por inputs con la opción seleccionada en los selects de index.html?-->
+            <section id = "campusPrint" class="col s6">
+
+            </section>
+            <section id = "generationPrint" class="col s6">
+
+            </section>
+            <section class="col s12">
+            </section>
+            <section class="row">
+              <div class="col s4 offset-s1" id="e-active">
+
+
+              </div>
+              <div class="center-align col s5">
+                <!--Gráfica-->
+                <table>
+                  <tr>
+                    <td>
+                      <div id="intro-div"></div>
+                    </td>
+                    <td>
+                      <div id="variables-div"></div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div id = "studentsButton">
+
+
+              </div>
+
+<!--              <div class="center-align col s5 offset-s5"> -->
+                <!--Gráfica-->
+<!--                <table>
+                  <tr>
+                    <td>
+                      <div id="ux-div"></div>
+                    </td>
+                    <td>
+                      <div id="avance-div"></div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </section>  -->
+
+
+
           <section class="col s9">
               <a href="generaciones.html"><button id="action" class="col s1 offset-s11 btn waves-effect waves-light" type="submit" name="action">
                <i class="material-icons right">keyboard_arrow_rightkeyboard_arrow_right</i>
             </button></a>
           </section>
-      </main>  
+      </main>
     </section>
     <!--Enlaces a funcionalidad -->
     <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
