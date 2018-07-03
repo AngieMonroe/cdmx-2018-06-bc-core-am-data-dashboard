@@ -40,9 +40,9 @@ function getData() {
 })
 }
 window.computeStudentsStats= (laboratoria) => {
-  campus = campusBox.value;
+  campus = campusBox.value.toLowerCase();
   console.log (campus);
-  generation = generationBox.value;
+  generation = generationBox.value.toLowerCase();
   console.log (generation);
   for (let valor in laboratoria[campus].generacion[generation].estudiantes){
     console.log(valor);
@@ -217,7 +217,7 @@ window.computeGenerationsStats = (laboratoria) => {
   average = Math.round((average / count));
   //console.log(average)
   computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
-  console.log(computeGeneration.generation[0].campus)
+  //console.log(computeGeneration.generation[0].campus)
 
   campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
   generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
@@ -230,10 +230,6 @@ window.computeGenerationsStats = (laboratoria) => {
   </div>
   <h5 class="center-align">Avance general: ${computeGeneration.generation[0].average}%</h5>
   `
-  studentsDom.innerHTML = `<button id="studentsList" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em;">
-      ALUMNAS
-    </button> `
-
 
 
   return computeGeneration.generation;
