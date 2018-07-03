@@ -200,10 +200,11 @@ function getData1() {
 };
 
 window.computeGenerationsStats = (laboratoria) => {
-     //let generationList = document.getElementById("id")
-     //let crearLista = document.createElement("p")
-     //crearLista.innerHTML = //quien tiene lo que quiero imprimir
-     //generationList.appendChild(crearLista)
+  let campusDom = document.getElementById("campusPrint")
+  let generationDom = document.getElementById("generationPrint")
+  let studentsActDom = document.getElementById("e-active")
+  let studentsDom = document.getElementById("studentsList")
+
     campus = campusBox.value.toLowerCase();
     //console.log (campus);
     generation = generationBox.value.toLowerCase();
@@ -215,9 +216,27 @@ window.computeGenerationsStats = (laboratoria) => {
       }
   average = Math.round((average / count));
   //console.log(average)
-  computeGeneration.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
-  console.log(computeGeneration.generation)
+  computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
+  console.log(computeGeneration.generation[0].campus)
 
+  campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
+  generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
+  studentsActDom.innerHTML = `
+  <h5 class="center-align agrandar-fuente">${computeGeneration.generation[0].count}</h5>
+  <h5 class="center-align">Estudiantes activas</h5>
+  <br>
+  <div class="progress">
+    <div class="determinate" style="width: 75%" id="progreso"></div>
+  </div>
+  <h5 class="center-align">Avance general: ${computeGeneration.generation[0].average}%</h5>
+  `
+  studentsDom.innerHTML = `<button id="studentsList" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em;">
+      ALUMNAS
+    </button> `
+
+
+
+  return computeGeneration.generation;
 };
 
 //////////////////////////////////////////////////////////////////////////////// Función sortStudents
