@@ -1,4 +1,7 @@
-studentsButton.addEventListener("click", getData);
-generationBox.addEventListener("change", getData1);
+generationBox.addEventListener("change", getData);
+
+studentsButton.addEventListener("click", getData1);
+
 //orderBox.addEventListener("click", sortStudents);
+
 //searchBox.addEventListener("click", filterStudents);
