@@ -4,20 +4,6 @@
 const link = "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json"
 let campus = document.getElementById("campusBox");
 let generation = document.getElementById("generationBox");
-let average = 0;
-let count = 0;
-let name = "";
-let email = "";
-let completedPercentage = 0;
-let status = 0;
-let topics = "";
-let subtopics = "";
-let completedPercentageTema = 0;
-let percentageDuration = 0;
-let percentageDurationTema = 0;
-let type = 0;
-let duration = 0;
-let completedPercentageGeneral = 0;
 const stats = {
     "students" : []
  }
@@ -32,7 +18,7 @@ const orderStats = {
 let search = "Bernarda Natasha";
 
 ////////////////////////////////////////////////////////////////////////////// Función computeStudentsStats(laboratoria)
-function getData() {
+function getData1 () {
   fetch(link)
     .then(response => response.json())
     .then(laboratoria => {
@@ -40,157 +26,69 @@ function getData() {
 })
 }
 window.computeStudentsStats= (laboratoria) => {
-  campus = campusBox.value;
-  console.log (campus);
-  generation = generationBox.value;
-  console.log (generation);
+  campus = campusBox.value.toLowerCase();
+  generation = generationBox.value.toLowerCase();
   for (let valor in laboratoria[campus].generacion[generation].estudiantes){
-    console.log(valor);
     name = laboratoria[campus].generacion[generation].estudiantes[valor].nombre;
-    console.log(name)
     email = laboratoria[campus].generacion[generation].estudiantes[valor].correo;
-    console.log(email)
     completedPercentage = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
-    console.log(completedPercentage)
     if(completedPercentage <= 60){
-      status = "< 60";
+      status = "Deficiente";
     } else if (completedPercentage >= 61 || completedPercetage <= 89){
-      status = "media";
+      status = "Promedio";
     } else if (completedPercentage >= 90){
-      status = "> 90";
+      status = "Sobresaliente";
     }
-    console.log (status)
+    topics = laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas;
 
-    for (let tema in laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas) {
-      topics = tema;
-      console.log (topics)
-      completedPercentageTema = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].porcentajeCompletado);
-      console.log (completedPercentageTema)
-      percentageDuration = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].duracionTemaCompletado);
-      console.log (percentageDuration)
-      percentageDurationTema = parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].duracionTema);
-      console.log (percentageDurationTema)
+    stats.students.push({
+      "name" : name,
+      "email" : email,
+      "campus" : campus,
+      "generation" : generation,
+      "stats" : {
+        "status" : status,
+        "completedPercentage" : completedPercentage,
+        "topics": { topics
+      }
+    }
+   });
+  }
+  stats.students.forEach(function(element){
+    for (var variable in element.stats.topics.topics) {
+      element.stats.topics.topics[variable].completedPercetageTema = element.stats.topics.topics[variable].porcentajeCompletado
+      delete element.stats.topics.topics[variable].porcentajeCompletado
+      percentageDuration = parseInt(element.stats.topics.topics[variable].duracionTemaCompletado);
+      percentageDurationTema = parseInt(element.stats.topics.topics[variable].duracionTema);
       percentageDuration = Math.round((percentageDuration * 100) / percentageDurationTema);
-      console.log (percentageDuration)
+      element.stats.topics.topics[variable]["percentageDurationTema"] = percentageDuration
+      delete element.stats.topics.topics[variable].duracionTema
+      delete element.stats.topics.topics[variable].duracionTemaCompletado
 
-      for (let subtema in laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas) {
-        subtopics = subtema;
-        console.log (subtopics)
-        type = laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas[subtema].tipo;
-        console.log(type)
-        // solicitan un dato que es el porcentaje de completitud, pero solo viene si se completo o no es decir que apareceria 100% o 0%?
-        let complete =  parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas[subtema].completado);
-        duration = laboratoria[campus].generacion[generation].estudiantes[valor].progreso.temas[tema].subtemas[subtema].duracionSubtema;
+      for (var variable2 in element.stats.topics.topics[variable].subtemas) {
+        element.stats.topics.topics[variable].subtemas[variable2].duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
+        complete =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
+        duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema;
           if (complete === 1) {
             duration = 0;
           } else {
             duration = duration;
           }
-          console.log (duration)
-        }
-      }
-      stats.students.push({
-        "name" : name,
-        "email" : email,
-        "campus" : campus,
-        "generation" : generation,
-        "stats" : {
-          "status" : status,
-          "completedPercentage" : completedPercentage,
-          "topics": {
-            "temas":{
-              "01-Introduccion-a-programacion": {
-                "completedPercentageTema" : completedPercentageTema,
-                "percentageDurationTema" : percentageDurationTema,
-                "subtopics" : {
-                  "00-bienvenida-orientacion" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "01-desarrollo-profesional" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "02-por-que-aprender-a-programar" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "03-tu-primer-sitio" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "04-quiz" : {
-                    "type" : type,
-                    "duration" : duration
-                  }
-                }
-              },
 
-              "02-Variables-y-tipo-de-datos": {
-                "completedPercentageTema" : completedPercentageTema,
-                "percentageDurationTema" : percentageDurationTema,
-                "subtopics": {
-                  "00-bienvenida-orientacion" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "01-desarrollo-profesional" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "02-por-que-aprender-a-programar" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "03-tu-primer-sitio" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "04-quiz" : {
-                    "type" : type,
-                    "duration" : duration
-                  }
-              }
-            },
-              "03-UX":{
-                "completedPercentageTema" : completedPercentageTema,
-                "percentageDurationTema" : percentageDurationTema,
-                "subtemas":{
-                  "00-bienvenida-orientacion" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "01-desarrollo-profesional" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "02-por-que-aprender-a-programar" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "03-tu-primer-sitio" : {
-                    "type" : type,
-                    "duration" : duration
-                  },
-                  "04-quiz" : {
-                    "type" : type,
-                    "duration" : duration
-                  }
-              }
-            }
-        }
+      element.stats.topics.topics[variable].subtemas[variable2].type = element.stats.topics.topics[variable].subtemas[variable2].tipo
+      delete element.stats.topics.topics[variable].subtemas[variable2].tipo
+      delete element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
     }
     }
-  });
-}
-    console.log (stats.students)
+  })
+  console.log (stats.students);
 
-}
-
+return stats.students;
+};
 
 
 ///////////////////////////////////////////////////////////////////////// Función computeGenerationStats(laboratoria)
-function getData1() {
+function getData() {
   fetch(link)
     .then(response => response.json())
     .then(laboratoria => {
@@ -206,18 +104,15 @@ window.computeGenerationsStats = (laboratoria) => {
   let studentsDom = document.getElementById("studentsList")
 
     campus = campusBox.value.toLowerCase();
-    //console.log (campus);
     generation = generationBox.value.toLowerCase();
-    //console.log (generation)
     count = laboratoria[campus].generacion[generation].estudiantes.length;
-    //console.log(count);
     for (let valor in laboratoria[campus].generacion[generation].estudiantes){
       average += parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
       }
   average = Math.round((average / count));
-  //console.log(average)
   computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
-  console.log(computeGeneration.generation[0].campus)
+
+
 
   campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
   generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
@@ -230,10 +125,6 @@ window.computeGenerationsStats = (laboratoria) => {
   </div>
   <h5 class="center-align">Avance general: ${computeGeneration.generation[0].average}%</h5>
   `
-  studentsDom.innerHTML = `<button id="studentsList" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em;">
-      ALUMNAS
-    </button> `
-
 
 
   return computeGeneration.generation;
