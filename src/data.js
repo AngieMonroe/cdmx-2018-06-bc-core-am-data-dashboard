@@ -4,18 +4,18 @@
 const link = "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json"
 let campus = document.getElementById("campusBox");
 let generation = document.getElementById("generationBox");
+let search = document.getElementById("searchBox");
+let orderBy = document.getElementById("orderByBox");
+let orderDirection = document.getElementById("orderDirectionBox");
 const stats = {
     "students" : []
  }
 const computeGeneration = {
     "generation" : []
 }
-let orderBy = "Nombre";
-let orderDirection = "Ascendente";
 const orderStats = {
     "students" : []
  }
-let search = "Bernarda Natasha";
 
 ////////////////////////////////////////////////////////////////////////////// Función computeStudentsStats(laboratoria)
 function getData1 () {
@@ -66,24 +66,18 @@ window.computeStudentsStats= (laboratoria) => {
       delete element.stats.topics.topics[variable].duracionTemaCompletado
 
       for (var variable2 in element.stats.topics.topics[variable].subtemas) {
+
+=======
         completedPercentage =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
         element.stats.topics.topics[variable].subtemas[variable2].duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
         duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema;
-          if (complete === 1) {
+          if (completedPercetage === 1) {
             duration = 0;
           } else {
             duration = duration;
           }
 
-          if(completedPercentage === 1){
-            completedPercentage = 100;
-          } else {
-            completedPercentage = 0;
-          }
 
-      element.stats.topics.topics[variable].subtemas[variable2].type = element.stats.topics.topics[variable].subtemas[variable2].tipo
-      delete element.stats.topics.topics[variable].subtemas[variable2].tipo
-      delete element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
     }
     }
   })
@@ -108,7 +102,7 @@ window.computeGenerationsStats = (laboratoria) => {
   let generationDom = document.getElementById("generationPrint")
   let studentsActDom = document.getElementById("e-active")
   let studentsDom = document.getElementById("studentsList")
-
+ console.log(laboratoria)
     campus = campusBox.value.toLowerCase();
     generation = generationBox.value.toLowerCase();
     count = laboratoria[campus].generacion[generation].estudiantes.length;
@@ -140,23 +134,24 @@ console.log('hola');
 //////////////////////////////////////////////////////////////////////////////// Función sortStudents
 
 window.sortStudents = (students, orderBy, orderDirection) => {
+  students = stats.students.name
+  ordenBy = document.getElementById("orderByBox").value;
+  orderDirection = document.getElementById("orderDirectionBox").value;
   if (orderBy === "Nombre" && orderDirection === "Ascendente"){
-    orderStats = stats.students.name.sort();
+    orderStats = students.sort();
     console.log (orderStats)
   } else if (orderBy === "Nombre" && orderDirection === "Descendente"){
-    stats.students.name.sort();
-    orderStats = stats.students.name.reverse();
+    students.sort();
+    orderStats = students.reverse();
   } else if (orderBy === "Porcentaje" && orderDirection === "Ascendente") {
     function orderAsc(a,b){
     return a-b;
     }
-      //Checar la ruta de acuerdo al objeto creado en la función 1
     orderStats = stats.students.completedPercetage.sort(orderAsc);
   } else if (orderBy === "Porcentaje" && orderDirection === "Descendente") {
     function orderAsc(a,b){
     return a-b;
   }
-      //Checar la ruta de acuerdo al objeto creado en la función 1
       stats.students.completedPercetage.sort(orderAsc);
       Orderstats = stats.students.completedPercetage.reverse();
 }
@@ -165,8 +160,29 @@ window.sortStudents = (students, orderBy, orderDirection) => {
 //////////////////////////////////////////////////////////////////////////////// Función filterStudents
 
 window.filterStudents = (students, search) => {
-  let searchStudents = stats.students.filter(function (el) {
-    return (el.name == "Bernarda Natasha")
+  students = stats.students;
+  search = document.getElementById("searchBox");
+  let searchStudents = students.filter(function (el) {
+    return (el.name === search)
   });
-console.log (searchStudents)
+return searchStudents;
+console.log(searchStudents)
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////Función datos primer pantalla
+
+window.infoComplete = (students) => {
+  statusSobresaliente = 0;
+  statusDeficiente = 0;
+  statusPromedio = 0;
+for (var variable in stats.students.status) {
+  if (variable === "Sobresaliente") {
+    statusSobresaliente += 1;
+  } else if (variable === "Deficiente"){
+    statusDeficiente += 1;
+  } else if (variable === "Promedio"){
+    statusPromedio += 1;
+  }
+  }
 }
