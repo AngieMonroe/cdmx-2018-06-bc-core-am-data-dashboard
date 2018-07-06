@@ -1,6 +1,7 @@
 //Una vez que elige la sede y la generación se carga la información de acuerdo a estos parametros
 //Necesito identificar el elemento para poder extraer la información con este primer parametro
 //Necesito identificar la generacion para extraer la información con el segundo parametro
+console.log("Esto jala")
 const link = "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json"
 let campus = document.getElementById("campusBox");
 let generation = document.getElementById("generationBox");
