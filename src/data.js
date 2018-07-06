@@ -66,13 +66,19 @@ window.computeStudentsStats= (laboratoria) => {
       delete element.stats.topics.topics[variable].duracionTemaCompletado
 
       for (var variable2 in element.stats.topics.topics[variable].subtemas) {
+        completedPercentage =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
         element.stats.topics.topics[variable].subtemas[variable2].duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
-        complete =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
         duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema;
           if (complete === 1) {
             duration = 0;
           } else {
             duration = duration;
+          }
+
+          if(completedPercentage === 1){
+            completedPercentage = 100;
+          } else {
+            completedPercentage = 0;
           }
 
       element.stats.topics.topics[variable].subtemas[variable2].type = element.stats.topics.topics[variable].subtemas[variable2].tipo
@@ -106,6 +112,7 @@ window.computeGenerationsStats = (laboratoria) => {
     campus = campusBox.value.toLowerCase();
     generation = generationBox.value.toLowerCase();
     count = laboratoria[campus].generacion[generation].estudiantes.length;
+    average = 0;
     for (let valor in laboratoria[campus].generacion[generation].estudiantes){
       average += parseInt(laboratoria[campus].generacion[generation].estudiantes[valor].progreso.porcentajeCompletado);
       }
