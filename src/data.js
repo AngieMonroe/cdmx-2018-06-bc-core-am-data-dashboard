@@ -66,7 +66,9 @@ window.computeStudentsStats= (laboratoria) => {
       delete element.stats.topics.topics[variable].duracionTemaCompletado
 
       for (var variable2 in element.stats.topics.topics[variable].subtemas) {
-        completedPercetage =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
+
+=======
+        completedPercentage =  parseInt(element.stats.topics.topics[variable].subtemas[variable2].completado);
         element.stats.topics.topics[variable].subtemas[variable2].duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema
         duration = element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema;
           if (completedPercetage === 1) {
@@ -75,18 +77,7 @@ window.computeStudentsStats= (laboratoria) => {
             duration = duration;
           }
 
-        if (completedPercetage === 1){
-          completedPercetage = 100;
-        } else {
-          completedPercetage = 0;
-        }
 
-
-      element.stats.topics.topics[variable].subtemas[variable2].completedPercetage = element.stats.topics.topics[variable].subtemas[variable2].completado;
-      element.stats.topics.topics[variable].subtemas[variable2].type = element.stats.topics.topics[variable].subtemas[variable2].tipo;
-      delete element.stats.topics.topics[variable].subtemas[variable2].tipo;
-      delete element.stats.topics.topics[variable].subtemas[variable2].duracionSubtema;
-      delete element.stats.topics.topics[variable].subtemas[variable2].completado;
     }
     }
   })
@@ -122,7 +113,7 @@ window.computeGenerationsStats = (laboratoria) => {
   average = Math.round((average / count));
   computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
 
-
+console.log('hola');
 
   campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
   generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
