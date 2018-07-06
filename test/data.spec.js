@@ -64,9 +64,9 @@ describe('data', () => {
         const subTopics = Object.keys(processed[0].stats.topics[topics[0]].subtopics);
 
           assert.deepEqual(processed[0].stats.topics[topics[0]].subtopics[subTopics[0]], {
-            completado: 1,
-            duracionSubtema: 55,
-            tipo: "lectura"
+            completedPercetage: 100,
+            duration: 30,
+            type: "lectura"
           });
       });
     });
@@ -98,16 +98,35 @@ describe('data', () => {
   });
 
   describe('sortStudents(students, orderBy, orderDirection)', () => {
+    const processedASC = sortStudents(computeStudentsStats(fixtures), "name", "ASC");
+    const processedDESC = sortStudents(computeStudentsStats(fixtures), "name", "DESC");
+    const processedpercentageASC = sortStudents(computeStudentsStats(fixtures), "completedPercetage", "ASC");
+    const processedpercentageDESC = sortStudents(computeStudentsStats(fixtures), "completedPercetage", "DESC");
 
-    it('debería retornar arreglo de estudiantes ordenado por nombre ASC');
-    it('debería retornar arreglo de estudiantes ordenado por nombre DESC');
-    it('debería retornar arreglo de estudiantes ordenado por porcentaje general ASC');
-    it('debería retornar arreglo de estudiantes ordenado por porcentaje general DESC');
+    it('debería retornar arreglo de estudiantes ordenado por nombre ASC', () => {
+      assert.equal(processedASC[0].name,"Aaliyah Lessie");
+      assert.equal(processedASC[133].name, "Yolanda Zula");
+    });
+
+    it('debería retornar arreglo de estudiantes ordenado por nombre DESC', () => {
+      assert.equal(processedDESC[0].name, "Yolanda Zula");
+      assert.equal(processedDESC[0].name, "Aaliyah Lessie");
+    });
+    it('debería retornar arreglo de estudiantes ordenado por porcentaje general ASC', () =>{
+      assert.equal(processedpercentageASC[0].name, "Vicki Aniice");
+      assert.equal(processedpercentageASC[0].name, "Rachael Cate");
+    });
+    it('debería retornar arreglo de estudiantes ordenado por porcentaje general DESC', () => {
+      assert.equal(processedpercentageDESC[0].name, "Rachel Cate");
+      assert.equal(processedpercentageDESC[0].jname, "Vicki Aniice");
+    });
   });
 
   describe('filterStudents(users, search)', () => {
-
-    it('debería retornar nuevo arreglo solo con estudiantes con nombres que contengan string (case insensitive)');
+    const processed = filterStudents(computeStudentsStats(fixtures), "Cari Candyce");
+    it('debería retornar nuevo arreglo solo el nombre de Cari Candyce', () => {
+      assert.equal(processed.length, 2);
+    });
 
   });
 });
