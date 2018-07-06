@@ -25,14 +25,12 @@
        google.charts.setOnLoadCallback(UX);
        // Draw the pie chart for the Avance de alumnas when Charts is loaded.
        google.charts.setOnLoadCallback(avanceDeAlumnas);
-
        // Draw the pie chart for Introducción a la programación when Charts is loaded.
        google.charts.setOnLoadCallback(IntroduccionChartAlumna);
        // Draw the pie chart for Variables y tipos de datos when Charts is loaded.
        google.charts.setOnLoadCallback(VariablesChartAlumna);
        // Draw the pie chart for UXAlumna when Charts is loaded.
        google.charts.setOnLoadCallback(UXAlumna);
-
        // Callback that draws the pie chart for Introducción a la programación.
        function IntroduccionChart() {
            // Create the data table for Introducción a la programación.
@@ -117,7 +115,6 @@
            var chart = new google.visualization.PieChart(document.getElementById('avance-div'));
            chart.draw(data, options);
        }
-
        // Callback that draws the pie chart for Introducción a la programación.
        function IntroduccionChartAlumna() {
            // Create the data table for Introducción a la programación.
@@ -138,7 +135,6 @@
            var chart = new google.visualization.PieChart(document.getElementById('alumni-div'));
            chart.draw(data, options);
        }
-
        // Callback that draws the pie chart for Variables y tipos de datos.
        function VariablesChartAlumna() {
            // Create the data table for Variables y tipos de datos.
@@ -235,7 +231,7 @@
               </select>
             </div>
           </section>
-   
+
           <section class="col s7"><h3></h3>
             <!--¿Cambiar los selects por inputs con la opción seleccionada en los selects de index.html?-->
             <section id = "campusPrint" class="col s6"><h3></h3>
@@ -249,7 +245,28 @@
             </section>
             <section class="row"><h3></h3>
               <div class="col s6 offset-s3" id="e-active">
+              </div>
 
+               <!--CORRECCIÓN EN CURSO
+       <section class="col s9">
+         <section class="col s6">
+             <h4>Sede elegida</h4>
+         </section>
+         <section class="col s6">
+             <h4>Generación elegida</h4>
+         </section>
+         <section class="col s12">
+         </section>
+         <section class="row">
+             <div class="col s5" id="e-activas">
+                 <h5 class="center-align agrandar-fuente">60</h5>
+                 <h5 class="center-align">Estudiantes activas</h5>
+                 <br>
+                 <div class="progress">
+                     <div class="determinate" style="width: 75%" id="progreso"></div>
+                 </div>
+                 <h5 class="center-align">Avance general: 75%</h5>
+             </div>-->
 
        <!--<div class="center-align col s5">
                            Gráfica
@@ -282,7 +299,35 @@
                     </div>-->
     </section>
 
-
+    <div class="input-field col s12">
+      <form action="">
+        <input type="text submit" id="autocomplete-input" class="autocomplete" placeholder="Buscar alumna">
+      </form>
+    </div>
+    <table class="col s12 responsive-table">
+      <thead>
+        <tr>
+          <th>Nombre
+            <a class="waves-effect waves-teal btn-flat" id="ascendente">
+              <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <a class="waves-effect waves-teal btn-flat" id="descendente">
+              <i class="material-icons">arrow_drop_down</i>
+            </a>
+          </th>
+          <th>E-mail</th>
+          <th>Campus</th>
+          <th>Generación</th>
+          <th>Porcentaje de avance
+            <a class="waves-effect waves-teal btn-flat" id="arriba">
+              <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <a class="waves-effect waves-teal btn-flat" id="abajo">
+              <i class="material-icons">arrow_drop_down</i>
+            </a>
+          </th>
+        </tr>
+      </thead>
 
       <tbody>
         <tr>
@@ -406,4 +451,72 @@
           </tr>
         </thead>
 
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="col s12">
+      <section class="col s2">
+        <h6 style="margin-top: 2em;">UX. Experiencia de usuario</h6>
+        <br>
+        <p>Horas invertidas: 60%</p>
+        <div class="progress">
+          <div class="determinate" style="width: 60%" id="progreso"></div>
+        </div>
+      </section>
+      <!--<div class="col s2" id="uxer-div"></div>-->
+      <table class="col s6 offset-s2 responsive-table">
+        <caption>
+          <h6>Subtemas</h6>
+        </caption>
+        <thead>
+          <tr>
+            <th>% Completado</th>
+            <th>Modalidad</th>
+            <th>Duración</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</section>
+<!--Enlaces a funcionalidad -->
+<link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
