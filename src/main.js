@@ -1,6 +1,6 @@
 generationBox.addEventListener("change", getData);
 
-studentsButton.addEventListener("click", getData1);
+//studentsButton.addEventListener("click", getData1);
 
 //orderBox.addEventListener("click", sortStudents);
 
