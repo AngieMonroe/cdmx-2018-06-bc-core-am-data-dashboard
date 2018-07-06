@@ -119,7 +119,7 @@ window.computeGenerationsStats = (laboratoria) => {
   average = Math.round((average / count));
   computeGeneration.generation.push({"campus" : campus.toUpperCase(), "generation" : generation.toUpperCase(), "average" : average, "count" : count});
 
-
+console.log('hola');
 
   campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
   generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
