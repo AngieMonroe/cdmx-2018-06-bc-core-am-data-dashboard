@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css">
   <title>Data Dashboard</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -281,7 +282,7 @@
                            </table>
                        </div>-->
           <!--Botón que imprimirá la lista de estudiantes-->
-          <button id="studentsButton" class="mg-top2 subtitulos col s3 offset-s3 btn waves-effect waves-light" type="submit" name="action"
+          <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s3 btn waves-effect waves-light" type="submit" name="action"
             style="background-color:#FFE521; color: #333333;">
             ALUMNAS
           </button>
@@ -301,12 +302,12 @@
                     </div>-->
         </section>
         <!--Impresión de lista de estudiantes y búsqueda individual-->
-        <div class="input-field col s12">
+        <div id="search" class="input-field col s12 ">
           <form class="mg-top3" action="">
             <input type="text submit" id="autocomplete-input" class="parrafos autocomplete" placeholder="Buscar alumna">
           </form>
         </div>
-        <table class="col s12 responsive-table">
+        <table id="alumnas-tabla" class="col s12 responsive-table ">
           <thead class="subtitulos">
             <tr>
               <th>Nombre
@@ -383,14 +384,14 @@
           </tbody>
         </table>
         <!--Impresión de datos por estudiante, de manera individual-->
-        <section class="mg-top3 parrafos col s12">
+        <section id="datos-alumna" class="mg-top3 parrafos col s12 ">
           <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
           <p class="col s4 offset-s1">Nombre:</p>
           <p class="col s4 offset-s1">E-mail:</p>
           <p class="col s4 offset-s1">Campus:</p>
           <p class="col s4 offset-s1">Generación:</p>
         </section>
-        <section class="mg-top2 col s12">
+        <section id="alumna-tabla1" class="mg-top2 col s12 ">
           <section class="col s2">
             <h6 class="subtitulos" style="margin-top: 2em;">Introducción a programación</h6>
             <br>
@@ -450,7 +451,7 @@
             </tbody>
           </table>
         </section>
-        <section class="col s12">
+        <section id="alumna-tabla2" class="col s12 ">
           <section class="col s2">
             <h6 style="margin-top: 2em;" class="subtitulos">Variables y tipos de datos</h6>
             <br>
@@ -511,7 +512,7 @@
             </tbody>
           </table>
         </section>
-        <section class="col s12">
+        <section id="alumna-tabla3" class="col s12 ">
           <section class="col s2">
             <h6 style="margin-top: 2em;" class="subtitulos">UX. Experiencia de usuario</h6>
             <br>
@@ -571,7 +572,7 @@
               </tr>
             </tbody>
           </table>
-  </div>
+        </section>
   </main>
   </section>
   <!--Enlaces a funcionalidad -->
