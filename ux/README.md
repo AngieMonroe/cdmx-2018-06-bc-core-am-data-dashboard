@@ -17,7 +17,7 @@ Disfrutan del trabajo en equipo.
 Tienen iniciativa.
  __Necesidades de las usuarias:__
 Acceder a la data de manera visual y lo más procesada posible.
-Conocer el status de las estudiantes de manera fácil y rápida, de manera personal y generacional.
+Conocer el status de las estudiantes de manera fácil y rápida, tanto de forma personal como generacional.
 Contar con data que contribuya a dar feedback oportuno a nuestras estudiantes, y tener la información en un solo lugar y a tiempo real.
 
 __Objetivos de las usuarias:__ (Lo que quieren o esperan lograr)

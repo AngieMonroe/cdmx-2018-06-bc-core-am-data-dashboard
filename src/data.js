@@ -125,13 +125,12 @@ window.computeGenerationsStats = (laboratoria) => {
   campusDom.innerHTML = `<h4>${computeGeneration.generation[0].campus}</h4>`
   generationDom.innerHTML = `<h4>${computeGeneration.generation[0].generation} GENERACIÓN </h4>`
   studentsActDom.innerHTML = `
-  <h5 class="center-align agrandar-fuente">${computeGeneration.generation[0].count}</h5>
-  <h5 class="center-align">Estudiantes activas</h5>
-  <br>
+  <h5 class="parrafos center-align agrandar-fuente">${computeGeneration.generation[0].count}</h5>
+  <p class=" font-rem2 parrafos center-align">Estudiantes activas</p>
   <div class="progress">
     <div class="determinate" style="width: 75%" id="progreso"></div>
   </div>
-  <h5 class="center-align">Avance general: ${computeGeneration.generation[0].average}%</h5>
+  <p class="font-rem2 parrafos center-align">Avance general: ${computeGeneration.generation[0].average}%</p>
   `
 
 

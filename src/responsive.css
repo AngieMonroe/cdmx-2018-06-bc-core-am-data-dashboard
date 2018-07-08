@@ -1,0 +1,29 @@
+@media(max-width: 499px){
+    #studentsButton{
+        display: none;
+    }
+
+    #alumnas-tabla{
+        display: none;
+    }
+    
+    #search{
+        display: none;
+    }
+
+    #datos-alumna{
+        display: none;
+    }
+
+    #alumna-tabla1{
+        display: none;
+    }
+
+    #alumna-tabla2{
+        display: none;
+    }
+    
+    #alumna-tabla3{
+        display: none;
+    }
+}
