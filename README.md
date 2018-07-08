@@ -1,3 +1,20 @@
+ # Data Dashboard ![LogoLaboratoria](/images/logo20182.png)
+
+Proyecto ideado en base a las necesidades de las training managers de Laboratoria en sus diferentes sedes, de acuerdo a los niveles requeridos en la rúbrica de evaluación. 
+
+Data Dashboard que contiene información sobre las alumnas de Laboratoria y su proceso de aprendizaje a través de la plataforma LMS, tanto de manera generacional como individual. Diseño que prioriza la visualización de la información de manera intuitiva, digerida y de fácil uso. Disponible para uso en equipos de escritorio (página web) y dispositivos móviles.
+
+Instrucciones de uso:
+1. Seleccionar sede deseada.
+2. Seleccionar generación deseada.
+3. Botón de alumnas para acceder a la tabla con la lista de las alumnas de la sede y generación seleccionadas.
+4. Botones en las columnas de Nombre y Porcentaje de avance para ordenar a las alumnas de manera descendente o ascendente, según el criterio que se requiera.
+5. Rellenar campo de búsqueda con nombre de alumna para acceder a la información individual de la alumna deseada.
+6. Opción REPORTES en el menú lateral para iniciar una búsqueda nueva con una sede y generación distintas a las seleccionadas anteriormente.
+
+Github page:
+(https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/src/index.html)
+
 # Data Dashboard
 
 ## Preámbulo
