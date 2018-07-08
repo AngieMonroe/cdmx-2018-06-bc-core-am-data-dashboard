@@ -4,5 +4,14 @@
   },
   "parserOptions": {
     "ecmaVersion": 6
-  }
+  },
+  "rules": {
+    "camelcase": 2,
+    "space-infix-ops": 2
+  },
+  "arrow-spacing": {
+    "before": true,
+    "after": true
+  },
+  "indent": ["error", 2]
 }
