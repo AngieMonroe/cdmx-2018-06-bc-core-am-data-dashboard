@@ -202,10 +202,10 @@
         <div class="col s2 offset-s1">
           <i class="material-icons">perm_identity</i>
         </div>
-        <section class="parrafos col s9 usuaria">
+        <div class="parrafos col s9 usuaria">
           LUCÍA RAMÍREZ
           <br> e-mail@example.com
-        </section>
+        </div>
         <ul class="col s12 collection">
           <a href="index.html">
             <li class="titulos menu-izq collection-item active" style="background-color: #FFE521; color: #333333;">
@@ -219,57 +219,58 @@
             <i class="material-icons">input</i> CERRAR SESIÓN</li>
         </ul>
       </aside>
-      <!--Elección de sede y generación deseada-->
-      <section class="col s4 m9">
-        <section class="col s9">
-          <h5 class="subtitulos">SEDE</h5>
-          <div class="input-field col s12">
-            <select class="parrafos" style="display: block;" id="campusBox">
-              <option disabled selected>Elige una...</option>
-              <option>Lima</option>
-              <option>Mexico</option>
-              <option>Santiago</option>
-            </select>
+        <!--Elección de sede y generación deseada-->
+        <section class="col s4 m9">
+          <section class="col s9">
+            <h5 class="subtitulos">SEDE</h5>
+            <div class="input-field col s12">
+              <select class="parrafos" style="display: block;" id="campusBox">
+                <option disabled selected>Elige una...</option>
+                <option>Lima</option>
+                <option>Mexico</option>
+                <option>Santiago</option>
+              </select>
+            </div>
+          </section>
+          <section class="col s9">
+            <h5 class="subtitulos">GENERACIÓN</h5>
+            <div class="input-field col s12">
+              <select class="parrafos" style="display: block;" id="generationBox">
+                <option disabled selected>Elige una...</option>
+                <option>Tercera</option>
+                <option>Cuarta</option>
+                <option>Quinta</option>
+              </select>
+            </div>
+          </section>
+          <!--Impresión de sede y generación escogida-->
+          <div class="col s9 mg-top3">
+            <div id="campusPrint" class="subtitulos col s4 offset-s1"></div>
+            <div id="generationPrint" class="subtitulos col s7"></div>
           </div>
-        </section>
-        <section class="col s9">
-          <h5 class="subtitulos">GENERACIÓN</h5>
-          <div class="input-field col s12">
-            <select class="parrafos" style="display: block;" id="generationBox">
-              <option disabled selected>Elige una...</option>
-              <option>Tercera</option>
-              <option>Cuarta</option>
-              <option>Quinta</option>
-            </select>
-          </div>
-        </section>
-        <!--Impresión de sede y generación escogida-->
-        <section class="col s9 mg-top3">
-          <section id="campusPrint" class="subtitulos col s4 offset-s1"></section>
-          <section id="generationPrint" class="subtitulos col s7"></section>
-        </section>
-        <section class="row">
-          <div class="parrafos col s7 offset-s1 font-rem" id="e-active"></div>
-          <!--Porcentajes de avance-->
-          <div class="mg-top3 col s3 font-rem">
-            <p class="parrafos center-align">Porcentaje de avance:
-              <br> <br> Más del 90: 50%
-              <br>  Entre 60 y 90: 15%
-              <br>  Menos del 60: 15%</p>
-          </div>
-          <div class="mg-top2 col s4 font-rem" style="margin-left: 1em;">
-            <p class="parrafos center-align">Introducción
-              <br> a programación: 90%</p>
-          </div>
-          <div class="mg-top2 col s4 font-rem">
-            <p class="parrafos center-align">Variables
-              <br> y tipos de datos: 90%</p>
-          </div>
-          <div class="mg-top2 col s3 font-rem">
-            <p class="parrafos center-align">UX: 90%</p>
-          </div>
-          <!--Gráfica-->
-          <!--<div class="center-align col s5">
+          <div class="row">
+            <div class="parrafos col s7 offset-s1 font-rem" id="e-active"></div>
+            <!--Porcentajes de avance-->
+            <div class="mg-top3 col s3 font-rem">
+              <p class="parrafos center-align">Porcentaje de avance:
+                <br>
+                <br> Más del 90: 50%
+                <br> Entre 60 y 90: 15%
+                <br> Menos del 60: 15%</p>
+            </div>
+            <div class="mg-top2 col s4 font-rem" style="margin-left: 1em;">
+              <p class="parrafos center-align">Introducción
+                <br> a programación: 90%</p>
+            </div>
+            <div class="mg-top2 col s4 font-rem">
+              <p class="parrafos center-align">Variables
+                <br> y tipos de datos: 90%</p>
+            </div>
+            <div class="mg-top2 col s3 font-rem">
+              <p class="parrafos center-align">UX: 90%</p>
+            </div>
+            <!--Gráfica-->
+            <!--<div class="center-align col s5">
                            <table>
                                <tr>
                                    <td>
@@ -281,12 +282,12 @@
                                </tr>
                            </table>
                        </div>-->
-          <!--Botón que imprimirá la lista de estudiantes-->
-          <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s3 btn waves-effect waves-light" type="submit" name="action"
-            style="background-color:#FFE521; color: #333333;">
-            ALUMNAS
-          </button>
-          <!--Gráfica
+            <!--Botón que imprimirá la lista de estudiantes-->
+            <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s3 btn waves-effect waves-light" type="submit" name="action"
+              style="background-color:#FFE521; color: #333333;">
+              ALUMNAS
+            </button>
+            <!--Gráfica
             <div class="center-align col s5 offset-s5">
                         Gráfica
                         <table>
@@ -300,121 +301,35 @@
                             </tr>
                         </table>
                     </div>-->
-        </section>
-        <!--Impresión de lista de estudiantes y búsqueda individual-->
-        <div id="search" class="input-field col s12 ">
-          <form class="mg-top3" action="">
-            <input type="text submit" id="autocomplete-input" class="parrafos autocomplete" placeholder="Buscar alumna">
-          </form>
-        </div>
-        <table id="alumnas-tabla" class="col s12 responsive-table ">
-          <thead class="subtitulos">
-            <tr>
-              <th>Nombre
-                <a class="waves-effect waves-teal btn-flat" id="ascendente">
-                  <i class="material-icons">arrow_drop_up</i>
-                </a>
-                <a class="waves-effect waves-teal btn-flat" id="descendente">
-                  <i class="material-icons">arrow_drop_down</i>
-                </a>
-              </th>
-              <th>E-mail</th>
-              <th>Campus</th>
-              <th>Generación</th>
-              <th>Porcentaje de avance
-                <a class="waves-effect waves-teal btn-flat" id="arriba">
-                  <i class="material-icons">arrow_drop_up</i>
-                </a>
-                <a class="waves-effect waves-teal btn-flat" id="abajo">
-                  <i class="material-icons">arrow_drop_down</i>
-                </a>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="parrafos">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <!--Impresión de datos por estudiante, de manera individual-->
-        <section id="datos-alumna" class="mg-top3 parrafos col s12 ">
-          <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
-          <p class="col s4 offset-s1">Nombre:</p>
-          <p class="col s4 offset-s1">E-mail:</p>
-          <p class="col s4 offset-s1">Campus:</p>
-          <p class="col s4 offset-s1">Generación:</p>
-        </section>
-        <section id="alumna-tabla1" class="mg-top2 col s12 ">
-          <section class="col s2">
-            <h6 class="subtitulos" style="margin-top: 2em;">Introducción a programación</h6>
-            <br>
-            <p class="parrafos">Progreso general: 90%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 90%"></div>
-            </div>
-            <br>
-            <p class="parrafos">Horas invertidas: 90%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 90%"></div>
-            </div>
-          </section>
-          <!--<div class="col s2" id="alumni-div"></div>-->
-          <table class="col s6 offset-s2 responsive-table">
-            <caption>
-              <h6 class="subtitulos">Subtemas</h6>
-            </caption>
-            <thead class="parrafos">
+          </div>
+          <!--Impresión de lista de estudiantes y búsqueda individual-->
+          <div id="search" class="input-field col s12 ">
+            <form class="mg-top3">
+              <input type="submit" id="autocomplete-input" class="parrafos autocomplete" placeholder="text">
+            </form>
+          </div>
+          <table id="alumnas-tabla" class="col s12 responsive-table ">
+            <thead class="subtitulos">
               <tr>
-                <th>% Completado</th>
-                <th>Modalidad</th>
-                <th>Duración</th>
+                <th>Nombre
+                  <a class="waves-effect waves-teal btn-flat" id="ascendente">
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <a class="waves-effect waves-teal btn-flat" id="descendente">
+                    <i class="material-icons">arrow_drop_down</i>
+                  </a>
+                </th>
+                <th>E-mail</th>
+                <th>Campus</th>
+                <th>Generación</th>
+                <th>Porcentaje de avance
+                  <a class="waves-effect waves-teal btn-flat" id="arriba">
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <a class="waves-effect waves-teal btn-flat" id="abajo">
+                    <i class="material-icons">arrow_drop_down</i>
+                  </a>
+                </th>
               </tr>
             </thead>
             <tbody class="parrafos">
@@ -422,18 +337,12 @@
                 <td></td>
                 <td></td>
                 <td></td>
-              </tr>
-              <tr>
-                <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <td></td>
                 <td></td>
-                <td></td>
-              </tr>
-              <tr>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -442,138 +351,231 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
             </tbody>
           </table>
-        </section>
-        <section id="alumna-tabla2" class="col s12 ">
-          <section class="col s2">
-            <h6 style="margin-top: 2em;" class="subtitulos">Variables y tipos de datos</h6>
-            <br>
-            <p class="parrafos">Progreso general: 90%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 90%"></div>
-            </div>
-            <br>
-            <p class="parrafos">Horas invertidas: 30%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 30%"></div>
-            </div>
-          </section>
-          <!--Gráfica 
+          <!--Impresión de datos por estudiante, de manera individual-->
+          <div id="datos-alumna" class="mg-top3 parrafos col s12 ">
+            <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
+            <p class="col s4 offset-s1">Nombre:</p>
+            <p class="col s4 offset-s1">E-mail:</p>
+            <p class="col s4 offset-s1">Campus:</p>
+            <p class="col s4 offset-s1">Generación:</p>
+          </div>
+          <div id="alumna-tabla1" class="mg-top2 col s12 ">
+            <section class="col s2">
+              <h6 class="subtitulos" style="margin-top: 2em;">Introducción a programación</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+            </section>
+            <!--<div class="col s2" id="alumni-div"></div>-->
+            <table class="col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead class="parrafos">
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody class="parrafos">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="alumna-tabla2" class="col s12 ">
+            <section class="col s2">
+              <h6 style="margin-top: 2em;" class="subtitulos">Variables y tipos de datos</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 30%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 30%"></div>
+              </div>
+            </section>
+            <!--Gráfica 
             <div class="col s2" id="variable-div"></div>-->
-          <table class="parrafos col s6 offset-s2 responsive-table">
-            <caption>
-              <h6 class="subtitulos">Subtemas</h6>
-            </caption>
-            <thead>
-              <tr>
-                <th>% Completado</th>
-                <th>Modalidad</th>
-                <th>Duración</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section id="alumna-tabla3" class="col s12 ">
-          <section class="col s2">
-            <h6 style="margin-top: 2em;" class="subtitulos">UX. Experiencia de usuario</h6>
-            <br>
-            <p class="parrafos">Progreso general: 90%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 90%"></div>
-            </div>
-            <br>
-            <p class="parrafos">Horas invertidas: 60%</p>
-            <div class="progress">
-              <div class="determinate" style="width: 60%"></div>
-            </div>
-          </section>
-          <!--Gráfica
+            <table class="parrafos col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead>
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="alumna-tabla3" class="col s12 ">
+            <section class="col s2">
+              <h6 style="margin-top: 2em;" class="subtitulos">UX. Experiencia de usuario</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 60%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 60%"></div>
+              </div>
+            </section>
+            <!--Gráfica
             <div class="col s2" id="uxer-div"></div>-->
-          <table class="parrafos col s6 offset-s2 responsive-table">
-            <caption>
-              <h6 class="subtitulos">Subtemas</h6>
-            </caption>
-            <thead>
-              <tr>
-                <th>% Completado</th>
-                <th>Modalidad</th>
-                <th>Duración</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-  </main>
+            <table class="parrafos col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead>
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </section>
+      </main>
   </div>
   <!--Enlaces a funcionalidad -->
   <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
