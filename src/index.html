@@ -198,7 +198,7 @@
       </section>
     </header>
     <main class="row">
-      <aside class="col s3 m3">
+      <aside class="col s12 m3">
         <div class="col s2 offset-s1">
           <i class="material-icons">perm_identity</i>
         </div>
@@ -220,10 +220,10 @@
         </ul>
       </aside>
         <!--Elección de sede y generación deseada-->
-        <section class="col s4 m9">
-          <section class="col s9">
+        <section class="col s12 m9">
+          <section class="col s12 m9">
             <h5 class="subtitulos">SEDE</h5>
-            <div class="input-field col s12">
+            <div class="input-field col s12 m12">
               <select class="parrafos" style="display: block;" id="campusBox">
                 <option disabled selected>Elige una...</option>
                 <option>Lima</option>
@@ -232,9 +232,9 @@
               </select>
             </div>
           </section>
-          <section class="col s9">
+          <section class="col s12 m9">
             <h5 class="subtitulos">GENERACIÓN</h5>
-            <div class="input-field col s12">
+            <div class="input-field col s12 m12">
               <select class="parrafos" style="display: block;" id="generationBox">
                 <option disabled selected>Elige una...</option>
                 <option>Tercera</option>
@@ -244,29 +244,29 @@
             </div>
           </section>
           <!--Impresión de sede y generación escogida-->
-          <div class="col s9 mg-top3">
+          <div class="col s12 m9 mg-top3">
             <div id="campusPrint" class="subtitulos col s4 offset-s1"></div>
-            <div id="generationPrint" class="subtitulos col s7"></div>
+            <div id="generationPrint" class="subtitulos col s11 offset-s1 m7"></div>
           </div>
           <div class="row">
             <div class="parrafos col s7 offset-s1 font-rem" id="e-active"></div>
             <!--Porcentajes de avance-->
-            <div class="mg-top3 col s3 font-rem">
+            <div class="mg-top3 col s12 m3 font-rem">
               <p class="parrafos center-align">Porcentaje de avance:
                 <br>
                 <br> Más del 90: 50%
                 <br> Entre 60 y 90: 15%
                 <br> Menos del 60: 15%</p>
             </div>
-            <div class="mg-top2 col s4 font-rem" style="margin-left: 1em;">
+            <div class="mg-top2 col s5 m4 font-rem" style="margin-left: 1em;">
               <p class="parrafos center-align">Introducción
                 <br> a programación: 90%</p>
             </div>
-            <div class="mg-top2 col s4 font-rem">
+            <div class="mg-top2 col s5 m4 font-rem">
               <p class="parrafos center-align">Variables
                 <br> y tipos de datos: 90%</p>
             </div>
-            <div class="mg-top2 col s3 font-rem">
+            <div class="mg-top2 col s12 m3 font-rem">
               <p class="parrafos center-align">UX: 90%</p>
             </div>
             <!--Gráfica-->
@@ -283,7 +283,7 @@
                            </table>
                        </div>-->
             <!--Botón que imprimirá la lista de estudiantes-->
-            <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s3 btn waves-effect waves-light" type="submit" name="action"
+            <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s8 btn waves-effect waves-light" type="submit" name="action"
               style="background-color:#FFE521; color: #333333;">
               ALUMNAS
             </button>
