@@ -1,47 +1,66 @@
-.foundFont{
-    font-family: museo-sans, Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
+.titulos {
+  font-family: 'Bitter', serif;
+}
 
-  .pt1{
-    padding-top: 0.5em;
-  }
+.subtitulos {
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .background-amarillo{
-    background-color: #FFE521;
-  }
+.parrafos{
+  font-family: 'Bitter', serif;
+}
 
-  .logo{
-    padding-top: 2em;
-  }
+.pt1 {
+  padding-top: 1em;
+}
 
-  .usuaria{
-    margin-bottom: 2em;
-  }
+.background-amarillo {
+  background-color: #FFE521;
+}
 
-  #action{
-    background-color:#FFE521;
-    color: #333333;
-  }
+.logo {
+  padding-top: 2em;
+}
 
-  #studentsList{
-    background-color:#FFE521;
-    color: #333333;
-  }
+.usuaria {
+  margin-bottom: 2em;
+}
 
-  .agrandar-fuente{
-    font-size: 8em;
-  }
+#action {
+  background-color: #FFE521;
+  color: #333333;
+}
 
-  #e-active{
-    background-color:#FFFFF0;
-  }
+.mg-top3{
+  margin-top: 3em;
+}
 
-  .progreso{
-    width: 75%;
-    background-color: #FFE521;
-  }
+.mg-top2{
+  margin-top: 2em;
+}
 
-  #reiniciar{
-    background-color:#FFE521;
-    color: #333333;
-  }
+#studentsList {
+  background-color: #FFE521;
+  color: #333333;
+}
+
+.agrandar-fuente {
+  font-size: 6em;
+}
+
+.font-rem{
+  font-size: 1.25rem;
+}
+
+.font-rem2{
+  font-size: 1.50rem;
+}
+
+#e-active {
+  background-color: #FFFFF0;
+}
+
+#reiniciar {
+  background-color: #FFE521;
+  color: #333333;
+}

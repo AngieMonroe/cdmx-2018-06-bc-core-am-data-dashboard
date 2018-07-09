@@ -17,7 +17,7 @@ Disfrutan del trabajo en equipo.
 Tienen iniciativa.
  __Necesidades de las usuarias:__
 Acceder a la data de manera visual y lo más procesada posible.
-Conocer el status de las estudiantes de manera fácil y rápida, de manera personal y generacional.
+Conocer el status de las estudiantes de manera fácil y rápida, tanto de forma personal como generacional.
 Contar con data que contribuya a dar feedback oportuno a nuestras estudiantes, y tener la información en un solo lugar y a tiempo real.
 
 __Objetivos de las usuarias:__ (Lo que quieren o esperan lograr)
@@ -26,7 +26,8 @@ Tomar decisiones, crear estrategias y realizar intervenciones en tiempo real, de
 __Pain points:__ (En sus actividades diarias qué es lo que más les molesta u obstaculiza en el proceso de  realizar sus actividades/objetivos)
 De acuerdo a las respuestas obtenidas en el formulario antes mencionado, 4 de 4 TMs no cuentan con una interfaz donde puedan ver y hacer uso de la data de progreso del LMS de las estudiantes de Laboratoria. Actualmente cuentan con un sistema Excel que, a su parecer, no hace usable la información disponible,ya que la información se encuentra aun sin procesar, lo que resulta en una interfaz saturada.
 Son demasiados pasos, que involucran una búsqueda manual para encontrar la información que necesitan.
-Hacen uso de la data sobre el progreso de las estudiantes, la mayor parte del tiempo, en el computador dentro de las instalaciones de cada una de las sedes,pero existen ocasiones en las que al asistir a juntas con stakeholders les es necesario hacer uso de la data por medio de dispositivos móviles (tablets, celulares), el sistema actual alenta el proceso de acceso a la información.
+Hacen uso de la data sobre el progreso de las estudiantes, la mayor parte del tiempo, en el computador dentro de las instalaciones de cada una de las sedes,pero existen ocasiones en las que al asistir a juntas con stakeholders les es necesario hacer uso de la data por medio de dispositivos móviles (celulares), el sistema actual alenta el proceso de acceso a la información. 
+Cuando desean acceder a la data por medio de un dispositivo móvil, hacen referencia a consultar el número de estudiantes activas y el promedio general de avance por generación.
 
 __Sentimientos:__(Sentimientos que les surgen dentro del proceso de sus actividades. Identificar cuáles predominan)
 Verbalizaciones:
@@ -84,8 +85,9 @@ La creación de un data dashboard apoyaría a las Training Managers en la toma d
 
 Es así que la finalidad del data dashboard es la visualización de la información requerida por medio de tablas, gráficas u otras representaciones visuales de manera sencilla y útil, para ayudar a entender, monitorear y mejorar en las áreas deseadas. Hacemos énfasis en su utilidad para poder intervenir sobre el proceso de aprendizaje de las estudiantes en tiempo real,creemos importante que su uso sea dinámico con información que se actualice de manera continua.
 
-Decidimos replicar el diseño de la plataforma LMS de Laboratoria, ya que contiene elementos y visualizaciones reconocibles para nuestras usuarias, lo cual ayudará a que la lectura y análisis de la data presentada se realice de manera intuitiva, rápida y sencilla. El LMS y el data dashboard se encontrarán en la misma plataforma, contribuyendo a identificar los temas y subtemas en las que las estudiantes puedan presentar menores o mayores avances y así generar intervenciones más informadas. Predominan los colores negro y amarillo distintivos de Laboratoria, llevaremos a cabo las representaciones visuales de la data con poco uso de texto que nos ayude a describir la información mostrada en el dashboard, para así transformar la data en información consumible.
-Ya que será una plataforma común para las distintas sedes, deseamos crear un diseño uniforme que apoye el sentido de comunidad y trabajo colaborativo al que Laboratoria apunta, contribuyendo a la toma de decisión conjunta y al feedback frecuente sobre la data generada por cada sede.
+Decidimos replicar el diseño de la plataforma LMS de Laboratoria, ya que contiene elementos y visualizaciones reconocibles para nuestras usuarias, lo cual ayudará a que la lectura y análisis de la data presentada se realice de manera intuitiva, rápida y sencilla. El LMS y el data dashboard se encontrarán en la misma plataforma, contribuyendo a identificar los temas y subtemas en las que las estudiantes puedan presentar menores o mayores avances y así generar intervenciones más informadas. Usamos la paleta de colores propia de Laboratoria, en la cual predominan el negro y el amarillo, llevaremos a cabo las representaciones visuales de la data con poco uso de texto que nos ayude a describir la información mostrada en el dashboard, para así transformar la data en información consumible.
+
+En la versión para móvil decidimos priorizar la información que mencionaron como la más consultada, es decir, el número de alumnas activas y los porcentajes de avance generacional. Ya que será una plataforma común para las distintas sedes, deseamos crear un diseño uniforme que apoye el sentido de comunidad y trabajo colaborativo al que Laboratoria apunta, contribuyendo a la toma de decisión conjunta y al feedback frecuente sobre la data generada por cada sede.
 
 
 ### **4. Prototipado**
@@ -118,7 +120,7 @@ Prototipo en figma:
 Prototipado clickable para testing con TMs
 (https://marvelapp.com/31h936h)
 
-Observaciones aplicadas en la interfaz final:
+Observaciones recopiladas en el testing de la interfaz final:
 Agregar indicador con porcentaje general de avance en el LMS de la siguiente manera:
 Avance mayor al 90% 
 Avance menor al 60%
@@ -128,4 +130,7 @@ Utilizar logo actual en la interfaz final.
 
 Usar tipografía, color y estilos propios de Laboratoria. 
 
-Agregar botón en última pantalla que permita volver al menú de sedes y generaciones.
+Agregar botón que permita volver al menú de sedes y generaciones.
+
+Una de las TMs consultadas considera como la información más importante al porcentaje de completitud de todo el curso, seguido del porcentaje de completitud por ejercicios. No considera que la información sobre quizzes y lecturas sea tan relevante. 
+ 

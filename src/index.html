@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css" />
-    <title>Data Dashboard</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!--Google Charts
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css">
+  <title>Data Dashboard</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Fuentes re-branding Laboratoria-->
+  <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+  <!--Google Charts
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    <script type="text/javascript">
        // Load Charts and the corechart package.
@@ -178,41 +184,47 @@
            chart.draw(data, options);
        }
    </script>-->
-  </head>
-  <body>
-    <container class="container-fluid foundFont">
-      <header class="row">
-        <div class="col s3">
-          <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
-          <img class="responsive-img logo" src="../images/logo2018.png" alt="logo-Laboratoria">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header class="row">
+      <div class="col s3">
+        <!--To make images resize responsively to page width, you can add the class responsive-img to your image tag. It will now have a max-width: 100% and height:auto.-->
+        <img class="responsive-img logo" src="../images/logo2018.png" alt="logo-Laboratoria">
+      </div>
+      <section class="col s9 background-amarillo">
+        <h4 class="titulos pt1">REPORTES</h4>
+      </section>
+    </header>
+    <main class="row">
+      <aside class="col s12 m3">
+        <div class="col s2 offset-s1">
+          <i class="material-icons">perm_identity</i>
         </div>
-        <section class="col s9 background-amarillo">
-          <h3 class="pt1">REPORTES</h3>
-        </section>
-      </header>
-      <main class="row">
-        <aside class="col s3">
-          <div class="col s2 offset-s1">
-            <i class="material-icons">perm_identity</i>
-          </div>
-          <section class="col s9 usuaria"><h3></h3>
-            LUCÍA RAMÍREZ <br> e-mail@example.com
-          </section>
-            <ul class="col s12 collection">
-              <a href="index.html">
-              <li class="collection-item active" style="background-color: #FFE521; color: #333333;">
+        <div class="parrafos col s9 usuaria">
+          LUCÍA RAMÍREZ
+          <br> e-mail@example.com
+        </div>
+        <ul class="col s12 collection">
+          <a href="index.html">
+            <li class="titulos menu-izq collection-item active" style="background-color: #FFE521; color: #333333;">
               <i class="material-icons">assessment</i> REPORTES</li>
-              </a>
-              <li class="collection-item"><i class="material-icons">import_contacts</i> MIS CURSOS</li>
-              <li class="collection-item"><i class="material-icons">settings</i> CONFIGURACIÓN</li>
-              <li class="collection-item"><i class="material-icons">input</i> CERRAR SESIÓN</li>
-            </ul>
-        </aside>
-        <section class="col s9">
-          <section class="col s9">
-            <h4>SEDE</h4>
-            <div class="input-field col s12">
-              <select style="display: block;" id="campusBox">
+          </a>
+          <li class="titulos collection-item">
+            <i class="material-icons">import_contacts</i> MIS CURSOS</li>
+          <li class="titulos collection-item">
+            <i class="material-icons">settings</i> CONFIGURACIÓN</li>
+          <li class="titulos collection-item">
+            <i class="material-icons">input</i> CERRAR SESIÓN</li>
+        </ul>
+      </aside>
+        <!--Elección de sede y generación deseada-->
+        <section class="col s12 m9">
+          <section class="col s12 m9">
+            <h5 class="subtitulos">SEDE</h5>
+            <div class="input-field col s12 m12">
+              <select class="parrafos" style="display: block;" id="campusBox">
                 <option disabled selected>Elige una...</option>
                 <option>Lima</option>
                 <option>Mexico</option>
@@ -220,10 +232,10 @@
               </select>
             </div>
           </section>
-          <section class="col s9">
-            <h4>GENERACIÓN</h4>
-            <div class="input-field col s12">
-              <select style="display: block;" id="generationBox">
+          <section class="col s12 m9">
+            <h5 class="subtitulos">GENERACIÓN</h5>
+            <div class="input-field col s12 m12">
+              <select class="parrafos" style="display: block;" id="generationBox">
                 <option disabled selected>Elige una...</option>
                 <option>Tercera</option>
                 <option>Cuarta</option>
@@ -231,45 +243,34 @@
               </select>
             </div>
           </section>
-
-          <section class="col s7"><h3></h3>
-            <!--¿Cambiar los selects por inputs con la opción seleccionada en los selects de index.html?-->
-            <section id = "campusPrint" class="col s6"><h3></h3>
-
-            </section>
-            <section id = "generationPrint" class="col s6"><h3></h3>
-
-            </section>
-            </section>
-            <section class="col s12"><h3></h3>
-            </section>
-            <section class="row"><h3></h3>
-              <div class="col s6 offset-s3" id="e-active">
-              </div>
-
-               <!--CORRECCIÓN EN CURSO
-       <section class="col s9">
-         <section class="col s6">
-             <h4>Sede elegida</h4>
-         </section>
-         <section class="col s6">
-             <h4>Generación elegida</h4>
-         </section>
-         <section class="col s12">
-         </section>
-         <section class="row">
-             <div class="col s5" id="e-activas">
-                 <h5 class="center-align agrandar-fuente">60</h5>
-                 <h5 class="center-align">Estudiantes activas</h5>
-                 <br>
-                 <div class="progress">
-                     <div class="determinate" style="width: 75%" id="progreso"></div>
-                 </div>
-                 <h5 class="center-align">Avance general: 75%</h5>
-             </div>-->
-
-       <!--<div class="center-align col s5">
-                           Gráfica
+          <!--Impresión de sede y generación escogida-->
+          <div class="col s12 m9 mg-top3">
+            <div id="campusPrint" class="subtitulos col s4 offset-s1"></div>
+            <div id="generationPrint" class="subtitulos col s11 offset-s1 m7"></div>
+          </div>
+          <div class="row">
+            <div class="parrafos col s7 offset-s1 font-rem" id="e-active"></div>
+            <!--Porcentajes de avance-->
+            <div class="mg-top3 col s12 m3 font-rem">
+              <p class="parrafos center-align">Porcentaje de avance:
+                <br>
+                <br> Más del 90: 50%
+                <br> Entre 60 y 90: 15%
+                <br> Menos del 60: 15%</p>
+            </div>
+            <div class="mg-top2 col s5 m4 font-rem" style="margin-left: 1em;">
+              <p class="parrafos center-align">Introducción
+                <br> a programación: 90%</p>
+            </div>
+            <div class="mg-top2 col s5 m4 font-rem">
+              <p class="parrafos center-align">Variables
+                <br> y tipos de datos: 90%</p>
+            </div>
+            <div class="mg-top2 col s12 m3 font-rem">
+              <p class="parrafos center-align">UX: 90%</p>
+            </div>
+            <!--Gráfica-->
+            <!--<div class="center-align col s5">
                            <table>
                                <tr>
                                    <td>
@@ -281,10 +282,13 @@
                                </tr>
                            </table>
                        </div>-->
-       <button id="studentsButton" class="col s4 offset-s1 btn waves-effect waves-light" type="submit" name="action" style="margin-top: 6em; background-color:#FFE521; color: #333333;">
-        ALUMNAS
-      </button>
-      <!--<div class="center-align col s5 offset-s5">
+            <!--Botón que imprimirá la lista de estudiantes-->
+            <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s8 btn waves-effect waves-light" type="submit" name="action"
+              style="background-color:#FFE521; color: #333333;">
+              ALUMNAS
+            </button>
+            <!--Gráfica
+            <div class="center-align col s5 offset-s5">
                         Gráfica
                         <table>
                             <tr>
@@ -297,228 +301,286 @@
                             </tr>
                         </table>
                     </div>-->
-    </section>
-
-    <div class="input-field col s12">
-      <form action="">
-        <input type="text submit" id="autocomplete-input" class="autocomplete" placeholder="Buscar alumna">
-      </form>
-    </div>
-    <table class="col s12 responsive-table">
-      <thead>
-        <tr>
-          <th>Nombre
-            <a class="waves-effect waves-teal btn-flat" id="ascendente">
-              <i class="material-icons">arrow_drop_up</i>
-            </a>
-            <a class="waves-effect waves-teal btn-flat" id="descendente">
-              <i class="material-icons">arrow_drop_down</i>
-            </a>
-          </th>
-          <th>E-mail</th>
-          <th>Campus</th>
-          <th>Generación</th>
-          <th>Porcentaje de avance
-            <a class="waves-effect waves-teal btn-flat" id="arriba">
-              <i class="material-icons">arrow_drop_up</i>
-            </a>
-            <a class="waves-effect waves-teal btn-flat" id="abajo">
-              <i class="material-icons">arrow_drop_down</i>
-            </a>
-          </th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <section class="col s12">
-      <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
-      <p class="col s4 offset-s1">Nombre:</p>
-      <p class="col s4 offset-s1">E-mail:</p>
-      <p class="col s4 offset-s1">Campus:</p>
-      <p class="col s4 offset-s1">Generación:</p>
-    </section>
-    <section class="col s12">
-      <section class="col s2">
-        <h6 style="margin-top: 2em;">Introducción a programación</h6>
-        <br>
-        <p>Horas invertidas: 90%</p>
-        <div class="progress">
-          <div class="determinate" style="width: 90%" id="progreso"></div>
-        </div>
-      </section>
-      <!--<div class="col s2" id="alumni-div"></div>-->
-      <table class="col s6 offset-s2 responsive-table">
-        <caption>
-          <h6>Subtemas</h6>
-        </caption>
-        <thead>
-          <tr>
-            <th>% Completado</th>
-            <th>Modalidad</th>
-            <th>Duración</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="col s12">
-      <section class="col s2">
-        <h6 style="margin-top: 2em;">Variables y tipos de datos</h6>
-        <br>
-        <p>Horas invertidas: 30%</p>
-        <div class="progress">
-          <div class="determinate" style="width: 30%" id="progreso"></div>
-        </div>
-      </section>
-      <!--<div class="col s2" id="variable-div"></div>-->
-      <table class="col s6 offset-s2 responsive-table">
-        <caption>
-          <h6>Subtemas</h6>
-        </caption>
-        <thead>
-          <tr>
-            <th>% Completado</th>
-            <th>Modalidad</th>
-            <th>Duración</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="col s12">
-      <section class="col s2">
-        <h6 style="margin-top: 2em;">UX. Experiencia de usuario</h6>
-        <br>
-        <p>Horas invertidas: 60%</p>
-        <div class="progress">
-          <div class="determinate" style="width: 60%" id="progreso"></div>
-        </div>
-      </section>
-      <!--<div class="col s2" id="uxer-div"></div>-->
-      <table class="col s6 offset-s2 responsive-table">
-        <caption>
-          <h6>Subtemas</h6>
-        </caption>
-        <thead>
-          <tr>
-            <th>% Completado</th>
-            <th>Modalidad</th>
-            <th>Duración</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-</section>
-<!--Enlaces a funcionalidad -->
-<link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
-<script src="data.js"></script>
-<script src="main.js"></script>
-
-
+          </div>
+          <!--Impresión de lista de estudiantes y búsqueda individual-->
+          <div id="search" class="input-field col s6">
+            <form class="mg-top3">
+              <input type="text" id="autocomplete-input" class="parrafos autocomplete" placeholder="Nombre de alumna">
+            </form>
+          </div>
+          <table id="alumnas-tabla" class="col s12 responsive-table ">
+            <thead class="subtitulos">
+              <tr>
+                <th>Nombre
+                  <a class="waves-effect waves-teal btn-flat" id="ascendente">
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <a class="waves-effect waves-teal btn-flat" id="descendente">
+                    <i class="material-icons">arrow_drop_down</i>
+                  </a>
+                </th>
+                <th>E-mail</th>
+                <th>Campus</th>
+                <th>Generación</th>
+                <th>Porcentaje de avance
+                  <a class="waves-effect waves-teal btn-flat" id="arriba">
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <a class="waves-effect waves-teal btn-flat" id="abajo">
+                    <i class="material-icons">arrow_drop_down</i>
+                  </a>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="parrafos">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--Impresión de datos por estudiante, de manera individual-->
+          <div id="datos-alumna" class="mg-top3 parrafos col s12 ">
+            <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
+            <p class="col s4 offset-s1">Nombre:</p>
+            <p class="col s4 offset-s1">E-mail:</p>
+            <p class="col s4 offset-s1">Campus:</p>
+            <p class="col s4 offset-s1">Generación:</p>
+          </div>
+          <div id="alumna-tabla1" class="mg-top2 col s12 ">
+            <section class="col s2">
+              <h6 class="subtitulos" style="margin-top: 2em;">Introducción a programación</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+            </section>
+            <!--<div class="col s2" id="alumni-div"></div>-->
+            <table class="col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead class="parrafos">
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody class="parrafos">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="alumna-tabla2" class="col s12 ">
+            <section class="col s2">
+              <h6 style="margin-top: 2em;" class="subtitulos">Variables y tipos de datos</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 30%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 30%"></div>
+              </div>
+            </section>
+            <!--Gráfica 
+            <div class="col s2" id="variable-div"></div>-->
+            <table class="parrafos col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead>
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="alumna-tabla3" class="col s12 ">
+            <section class="col s2">
+              <h6 style="margin-top: 2em;" class="subtitulos">UX. Experiencia de usuario</h6>
+              <br>
+              <p class="parrafos">Progreso general: 90%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 90%"></div>
+              </div>
+              <br>
+              <p class="parrafos">Horas invertidas: 60%</p>
+              <div class="progress">
+                <div class="determinate" style="width: 60%"></div>
+              </div>
+            </section>
+            <!--Gráfica
+            <div class="col s2" id="uxer-div"></div>-->
+            <table class="parrafos col s6 offset-s2 responsive-table">
+              <caption>
+                <h6 class="subtitulos">Subtemas</h6>
+              </caption>
+              <thead>
+                <tr>
+                  <th>% Completado</th>
+                  <th>Modalidad</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </section>
+      </main>
+  </div>
+  <!--Enlaces a funcionalidad -->
+  <link rel="getData" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
