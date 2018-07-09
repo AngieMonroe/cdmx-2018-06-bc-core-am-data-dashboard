@@ -1,4 +1,6 @@
-@media(max-width: 499px) {
+/* Smartphones (portrait and landscape) ———– */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     #studentsButton {
         display: none;
     }
@@ -21,3 +23,33 @@
         display: none;
     }
 }
+
+/* iPads (portrait and landscape) ———– */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    #studentsButton {
+        display: none;
+    }
+    #alumnas-tabla {
+        display: none;
+    }
+    #search {
+        display: none;
+    }
+    #datos-alumna {
+        display: none;
+    }
+    #alumna-tabla1 {
+        display: none;
+    }
+    #alumna-tabla2 {
+        display: none;
+    }
+    #alumna-tabla3 {
+        display: none;
+    }
+}
+
+/* Desktops and laptops ———– */
+
+@media only screen and (min-width: 1224px) {}
