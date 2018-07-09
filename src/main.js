@@ -1,6 +1,4 @@
-generationBox.addEventListener("change", getData);
-
-
+generationBox.addEventListener("change", firstPrint);
 
 orderBox.addEventListener("click", sortStudents);
 
