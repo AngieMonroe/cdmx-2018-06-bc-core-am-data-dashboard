@@ -4,10 +4,11 @@ Se declaran variables globales que se utilizan para iterar la data.
 const url = 'https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json';
 let campusSearch = document.getElementById('campusBox');
 let generationSearch = document.getElementById('generationBox');
+let searchStu = document.getElementById('searchBox');
 let orderStudents = [];
 let orderBy = 'Nombre';
 let orderDirection = 'Ascendente';
-let search = document.getElementById('searchBox');
+
 
 /*
 Se realiza una función para cargar la información al momento de entrar a la página.
@@ -15,15 +16,26 @@ Se realiza una función para cargar la información al momento de entrar a la p�
 // Función cargar data  OK
 
 window.onload = () => {
+  console.log(url); 
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      getData();
+      processedData(data)
+      getData(data);
       getData1();
     })
     .catch(error => {
       console.log('Esta fallando el internet');
     });
+};
+
+const processedData = (data) => {
+  console.log(data);
+  
+  const computarData = computeStudentsStats(data);
+  sortStudents(computarData,orderBy, orderDirection)
+  // filterStudents(computarData, search )  
+  console.log(computarData);
 };
 
 /*
@@ -36,7 +48,8 @@ function getData() {
   fetch(url)
     .then(response => response.json())
     .then(laboratoria => {
-      computeStudentsStats(laboratoria);
+      
+      // computeStudentsStats(laboratoria);
     });
 }
 
@@ -133,10 +146,7 @@ window.computeStudentsStats = (laboratoria) => {
       }
     }
   });
-  console.log(students);
-  filterStudents(students, search);
-  sortStudents(students, orderBy, orderDirection);
-
+  
   return students;
 };
 
@@ -211,156 +221,12 @@ de la propiedad name con el valor que se busca.
 */
 
 window.filterStudents = (students, search) => {
+  search = searchStu.value;
   const searchStudents = students.filter(function(el) {
-    return (el.name === search);
+    return (el.name == search);
   });
   console.log(searchStudents);
   return searchStudents;
 };
 
 
-// Función datos primer pantalla
-/*
-Para mostrar información en pantalla se realizaron funciones con la información necesaria de acuerdo a los criterios
-seleccionados por las usuarias. Se itera con los criterios seleccionados la data original de archivo json.
-Esta función traerá información general de la generación seleccionada.
-*/
-
-function firstPrint() {
-  fetch(url)
-    .then(response => response.json())
-    .then(laboratoria => {
-      firstInfo(laboratoria);
-    });
-};
-
-window.firstInfo = (laboratoria) => {
-  const info = [];
-  campusSearch = campusBox.value.toLowerCase();
-  generationSearch = generationBox.value.toLowerCase();
-  count = laboratoria[campusSearch].generacion[generationSearch].estudiantes.length;
-  average = 0;
-  statusLow = 0;
-  statusMedium = 0;
-  statusHigh = 0;
-  theme1 = 0;
-  theme2 = 0;
-  theme3 = 0;
-  for (let valor in laboratoria[campusSearch].generacion[generationSearch].estudiantes) {
-    average += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.porcentajeCompletado);
-    status = average;
-    // Revisar esta parte para que sume 1 de acuerdo a la condicion
-    if (average <= 60) {
-      statusLow += 1;
-    } else if (average >= 61 || average <= 89) {
-      statusMedium += 1;
-    } else if (average >= 90) {
-      statusHigh += 1;
-    }
-
-    statusLow = Math.round((statusLow / count));
-    statusLow = Math.round((statusLow / count));
-    statusLow = Math.round((statusLow / count));
-
-    theme1 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['01-Introduccion-a-programacion'].porcentajeCompletado);
-    theme2 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['02-Variables-y-tipo-de-datos'].porcentajeCompletado);
-    theme3 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['03-UX'].porcentajeCompletado);
-  }
-  average = Math.round((average / count));
-  // console.log (average)
-  theme1 = Math.round((theme1 / count));
-  // console.log(theme1);
-  theme2 = Math.round((theme2 / count));
-  // console.log(theme2);
-  theme3 = Math.round((theme3 / count));
-  // console.log(theme3);
-  info.push({'campus': campusSearch.toUpperCase(),
-'generation': generationSearch.toUpperCase(),
-'average': average,
-'count': count,
-    'statusLow': statusLow,
-'statusMedium': statusMedium,
-'statusHigh': statusHigh,
-'theme1': theme1,
-'theme2': theme2,
-'theme3': theme3});
-
-  secondPrint();
-  return info;
-};
-
-// Función datos segunda pantalla
-/*
-En esta función se itera para obtener información de las alumnas y crear un listado de acuerdo a los criterios de sede y
-generación seleccionados. Se itera la data original del archivo json.
-*/
-function secondPrint() {
-  fetch(url)
-    .then(response => response.json())
-    .then(laboratoria => {
-      secondInfo(laboratoria);
-    });
-}
-window.secondInfo = (laboratoria) => {
-  const info2 = [];
-  for (let valor in laboratoria[campusSearch].generacion[generationSearch].estudiantes) {
-    name = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].nombre;
-    email = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].correo;
-    completedPercentage = parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.porcentajeCompletado);
-
-    info2.push({
-      'name': name,
-      'email': email,
-      'campus': campus,
-      'generation': generation
-    });
-  }
-
-  return info2;
-};
-
-
-// Función datos tercer pantalla
-
-/*
-La función trae información especifica de cada alumna para ser mostrada en pantalla. Se itera la data original del json.
-*/
-
-function thirdPrint() {
-  fetch(url)
-    .then(response => response.json())
-    .then(laboratoria => {
-      thirdInfo(laboratoria);
-    });
-}
-window.thirdInfo = (laboratoria) => {
-  const info3 = [];
-  campusSearch = campusBox.value.toLowerCase();
-  console.log(campusSearch);
-  generationSearch = generationBox.value.toLowerCase();
-  console.log(generationSearch);
-  theme1 = 0;
-  theme2 = 0;
-  theme3 = 0;
-
-  for (let valor in laboratoria[campusSearch].generacion[generationSearch].estudiantes) {
-    name = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].nombre;
-    email = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].correo;
-    topics = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas;
-    theme1 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['01-Introduccion-a-programacion'].porcentajeCompletado);
-    theme2 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['02-Variables-y-tipo-de-datos'].porcentajeCompletado);
-    theme3 += parseInt(laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].progreso.temas['03-UX'].porcentajeCompletado);
-
-    info3.push({
-      'name': name,
-      'email': email,
-      'campus': campusSearch,
-      'generation': generationSearch,
-      'javascript': theme1,
-      'variables': theme2,
-      'ux': theme3,
-      'topics': topics
-    });
-  }
-  console.log(info3);
-};

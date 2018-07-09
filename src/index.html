@@ -251,23 +251,17 @@
           <div class="row">
             <div class="parrafos col s7 offset-s1 font-rem" id="e-active"></div>
             <!--Porcentajes de avance-->
-            <div class="mg-top3 col s12 m3 font-rem">
-              <p class="parrafos center-align">Porcentaje de avance:
-                <br>
-                <br> Más del 90: 50%
-                <br> Entre 60 y 90: 15%
-                <br> Menos del 60: 15%</p>
+            <div id = "status" class="mg-top3 col s12 m3 font-rem">
+              
             </div>
-            <div class="mg-top2 col s5 m4 font-rem" style="margin-left: 1em;">
-              <p class="parrafos center-align">Introducción
-                <br> a programación: 90%</p>
+            <div id ="theme1"class="mg-top2 col s5 m4 font-rem" style="margin-left: 1em;">
+              
             </div>
-            <div class="mg-top2 col s5 m4 font-rem">
-              <p class="parrafos center-align">Variables
-                <br> y tipos de datos: 90%</p>
+            <div id = "theme2"class="mg-top2 col s5 m4 font-rem">
+              
             </div>
-            <div class="mg-top2 col s12 m3 font-rem">
-              <p class="parrafos center-align">UX: 90%</p>
+            <div id="theme3" class="mg-top2 col s12 m3 font-rem">
+              
             </div>
             <!--Gráfica-->
             <!--<div class="center-align col s5">
@@ -303,87 +297,12 @@
                     </div>-->
           </div>
           <!--Impresión de lista de estudiantes y búsqueda individual-->
-          <div id="search" class="input-field col s6">
-            <form class="mg-top3">
-              <input type="text" id="autocomplete-input" class="parrafos autocomplete" placeholder="Nombre de alumna">
-            </form>
+          <div id="search" class="col s6">
+              <form class="mg-top3">
+                  <input type="text" id="searchBox" class="parrafos autocomplete" placeholder="Nombre de alumna">
+                </form>
           </div>
-          <table id="alumnas-tabla" class="col s12 responsive-table ">
-            <thead class="subtitulos">
-              <tr>
-                <th>Nombre
-                  <a class="waves-effect waves-teal btn-flat" id="ascendente">
-                    <i class="material-icons">arrow_drop_up</i>
-                  </a>
-                  <a class="waves-effect waves-teal btn-flat" id="descendente">
-                    <i class="material-icons">arrow_drop_down</i>
-                  </a>
-                </th>
-                <th>E-mail</th>
-                <th>Campus</th>
-                <th>Generación</th>
-                <th>Porcentaje de avance
-                  <a class="waves-effect waves-teal btn-flat" id="arriba">
-                    <i class="material-icons">arrow_drop_up</i>
-                  </a>
-                  <a class="waves-effect waves-teal btn-flat" id="abajo">
-                    <i class="material-icons">arrow_drop_down</i>
-                  </a>
-                </th>
-              </tr>
-            </thead>
-            <tbody class="parrafos">
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <table id="alumnas-tabla" class="col s12 responsive-table "> </table>
           <!--Impresión de datos por estudiante, de manera individual-->
           <div id="datos-alumna" class="mg-top3 parrafos col s12 ">
             <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
