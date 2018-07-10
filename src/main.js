@@ -1,8 +1,10 @@
-generationBox.addEventListener('change', firstPrint);
+//La organización de código en archivos que dividan las responsabilidades sigue en proceso, es necesario realizar 
+ 
+generationBox.addEventListener('change', generationPrint);
 
-studentsButton.addEventListener('click', secondPrint);
+studentsButton.addEventListener('click', studentsListPrint);
 
-searchBox.addEventListener('keyUp', filterStudents);
+//searchBox.addEventListener('keyUp', filterStudents);
 
 
 // Función datos primer pantalla
@@ -12,7 +14,7 @@ seleccionados por las usuarias. Se itera con los criterios seleccionados la data
 Esta función traerá información general de la generación seleccionada.
 */
 
-function firstPrint() {
+function generationPrint() {
   fetch(url)
     .then(response => response.json())
     .then(laboratoria => {
@@ -105,7 +107,7 @@ window.firstInfo = (laboratoria) => {
   <div class="determinate" style="width: ${info[0].theme2}${'%'}" id="progreso"></div>
   </div></p>`
   theme3Dom.innerHTML = `<p class="parrafos center-align back-yellow" style="margin-top: 2.44em;">UX: ${info[0].theme3}%
-  <div class="progress">
+  <div class="progress ">
   <div class="determinate" style="width: ${info[0].theme3}${'%'}" id="progreso"></div>
   </div></p>`
 
@@ -117,7 +119,7 @@ window.firstInfo = (laboratoria) => {
   En esta función se itera para obtener información de las alumnas y crear un listado de acuerdo a los criterios de sede y
   generación seleccionados. Se itera la data original del archivo json.
   */
-function secondPrint() {
+function studentsListPrint() {
   fetch(url)
     .then(response => response.json())
     .then(laboratoria => {
@@ -127,8 +129,9 @@ function secondPrint() {
 window.secondInfo = (laboratoria) => {
   campusSearch = campusBox.value.toLowerCase();
   generationSearch = generationBox.value.toLowerCase();
-  let searchDom = document.getElementById('search');
+  //Búsqueda individual de alumnas, iteración en proceso. let searchDom = document.getElementById('search');
   let alumnastablaDom = document.getElementById('alumnas-tabla');
+  //Select de alumnas en proceso. let selectAlumnasDom = document.getElementById('alumnas-select');
   const info2 = [];
   for (let valor in laboratoria[campusSearch].generacion[generationSearch].estudiantes) {
     name = laboratoria[campusSearch].generacion[generationSearch].estudiantes[valor].nombre;
@@ -140,11 +143,11 @@ window.secondInfo = (laboratoria) => {
       'email': email,
       'campus': campusSearch,
       'generation': generationSearch,
-      'completedPercentage' : completedPercentage
+      'completedPercentage': completedPercentage
     });
   }
   console.log(info2)
-  
+
   alumnastablaDom.innerHTML = `<thead class="center-align subtitulos">
   <tr>
     <th class="center">Nombre
@@ -167,7 +170,13 @@ window.secondInfo = (laboratoria) => {
     <td class="center">${info2[i].generation}</td>
     <td class="center">${info2[i].completedPercentage}</td>
   </tr>`
-}
+
+  }
+
+  /* Iteración en proceso, para buscar a las alumnas de manera individual
+  for (let x = 0; x < info2.length; x++) {
+   selectObject.options = new Option(info2[x].name)
+   }*/
 
   return info2;
 };
@@ -179,7 +188,7 @@ window.secondInfo = (laboratoria) => {
   La función trae información especifica de cada alumna para ser mostrada en pantalla. Se itera la data original del json.
   */
 
-function thirdPrint() {
+function studentsPrint() {
   fetch(url)
     .then(response => response.json())
     .then(laboratoria => {
@@ -217,4 +226,3 @@ window.thirdInfo = (laboratoria) => {
   }
   console.log(info3);
 };
-

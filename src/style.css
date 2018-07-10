@@ -6,7 +6,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.parrafos{
+.parrafos {
   font-family: 'Bitter', serif;
 }
 
@@ -31,11 +31,11 @@
   color: #333333;
 }
 
-.mg-top3{
+.mg-top3 {
   margin-top: 3em;
 }
 
-.mg-top2{
+.mg-top2 {
   margin-top: 2em;
 }
 
@@ -48,11 +48,7 @@
   font-size: 6em;
 }
 
-.font-rem{
-  font-size: 1.5rem;
-}
-
-.font-rem2{
+.font-rem {
   font-size: 1.5rem;
 }
 
@@ -60,7 +56,7 @@
   background-color: #FFFFF0;
 }
 
-.back-yellow{
+.back-yellow {
   background-color: #FFFFF0;
   color: #333333;
 }
@@ -70,6 +66,16 @@
   color: #333333;
 }
 
-.center{
+.center {
   text-align: center;
+}
+
+.view-block{
+  display: block;
+}
+
+.yellow-submarine{
+  background-color: #FFE521 !important; 
+  color: #333333 !important;
+
 }
