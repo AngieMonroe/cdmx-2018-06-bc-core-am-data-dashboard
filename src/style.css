@@ -49,15 +49,20 @@
 }
 
 .font-rem{
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .font-rem2{
-  font-size: 1.50rem;
+  font-size: 1.5rem;
 }
 
 #e-active {
   background-color: #FFFFF0;
+}
+
+.back-yellow{
+  background-color: #FFFFF0;
+  color: #333333;
 }
 
 #reiniciar {

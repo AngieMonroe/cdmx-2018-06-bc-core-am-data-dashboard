@@ -81,24 +81,33 @@ window.firstInfo = (laboratoria) => {
   generationDom.innerHTML = `<h4>${info[0].generation} GENERACIÓN </h4>`
   studentsActDom.innerHTML = `
   <h5 class="center-align agrandar-fuente">${info[0].count}</h5>
-  <h5 class="center-align">Estudiantes activas</h5>
+  <h5 class="center-align font-rem">Estudiantes activas</h5>
   <br>
   <div class="progress">
     <div class="determinate" style="width: ${info[0].average}${'%'}" id="progreso"></div>
   </div>
-  <h5 class="center-align">Avance general: ${info[0].average}${'%'}</h5>
+  <h5 class="center-align font-rem">Avance general: ${info[0].average}${'%'}</h5>
   `
-  statusDom.innerHTML = ` <p class="parrafos center-align">Alumnas que han alcanzado:
+  statusDom.innerHTML = ` <p class="parrafos center-align back-yellow">Alumnas que han alcanzado:
   <br>
-  <br> Más del 90: ${info[0].statusLow}
-  <br> Entre 60 y 90: ${info[0].statusMedium}
-  <br> Menos del 60: ${info[0].statusHigh}</p>
+  <br> Más del 90%: ${info[0].statusLow}
+  <br> Entre 60% y 90%: ${info[0].statusMedium}
+  <br> Menos del 60%: ${info[0].statusHigh}</p>
   `
-  theme1Dom.innerHTML = `<p class="parrafos center-align">Introducción
-  <br> a programación: ${info[0].theme1}%</p>`
-  theme2Dom.innerHTML = `<p class="parrafos center-align">Variables
-  <br> y tipos de datos: ${info[0].theme2}%</p>`
-  theme3Dom.innerHTML = `<p class="parrafos center-align">UX: ${info[0].theme3}%</p>`
+  theme1Dom.innerHTML = `<p class="parrafos center-align back-yellow">Introducción
+  <br> a programación: ${info[0].theme1}% 
+  <div class="progress">
+  <div class="determinate" style="width: ${info[0].theme1}${'%'}" id="progreso"></div>
+  </div></p>`
+  theme2Dom.innerHTML = `<p class="parrafos center-align back-yellow">Variables
+  <br> y tipos de datos: ${info[0].theme2}%
+  <div class="progress">
+  <div class="determinate" style="width: ${info[0].theme2}${'%'}" id="progreso"></div>
+  </div></p>`
+  theme3Dom.innerHTML = `<p class="parrafos center-align back-yellow" style="margin-top: 2.44em;">UX: ${info[0].theme3}%
+  <div class="progress">
+  <div class="determinate" style="width: ${info[0].theme3}${'%'}" id="progreso"></div>
+  </div></p>`
 
 
 };
@@ -139,23 +148,11 @@ window.secondInfo = (laboratoria) => {
   alumnastablaDom.innerHTML = `<thead class="subtitulos">
   <tr>
     <th>Nombre
-      <a class="waves-effect waves-teal btn-flat" id="ascendente">
-        <i class="material-icons">arrow_drop_up</i>
-      </a>
-      <a class="waves-effect waves-teal btn-flat" id="descendente">
-        <i class="material-icons">arrow_drop_down</i>
-      </a>
     </th>
     <th>E-mail</th>
     <th>Campus</th>
     <th>Generación</th>
     <th>Porcentaje de avance
-      <a class="waves-effect waves-teal btn-flat" id="arriba">
-        <i class="material-icons">arrow_drop_up</i>
-      </a>
-      <a class="waves-effect waves-teal btn-flat" id="abajo">
-        <i class="material-icons">arrow_drop_down</i>
-      </a>
     </th>
   </tr>
   </thead>`
