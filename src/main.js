@@ -145,14 +145,14 @@ window.secondInfo = (laboratoria) => {
   }
   console.log(info2)
   
-  alumnastablaDom.innerHTML = `<thead class="subtitulos">
+  alumnastablaDom.innerHTML = `<thead class="center-align subtitulos">
   <tr>
-    <th>Nombre
+    <th class="center">Nombre
     </th>
-    <th>E-mail</th>
-    <th>Campus</th>
-    <th>Generación</th>
-    <th>Porcentaje de avance
+    <th class="center">E-mail</th>
+    <th class="center">Campus</th>
+    <th class="center">Generación</th>
+    <th class="center">Porcentaje de avance
     </th>
   </tr>
   </thead>`
@@ -161,11 +161,11 @@ window.secondInfo = (laboratoria) => {
     alumnastablaDom.innerHTML += `
     <tbody class="parrafos">
   <tr>
-    <td>${info2[i].name}</td>
-    <td>${info2[i].email}</td>
-    <td>${info2[i].campus}</td>
-    <td>${info2[i].generation}</td>
-    <td>${info2[i].completedPercentage}</td>
+    <td class="center">${info2[i].name}</td>
+    <td class="center">${info2[i].email}</td>
+    <td class="center">${info2[i].campus}</td>
+    <td class="center">${info2[i].generation}</td>
+    <td class="center">${info2[i].completedPercentage}</td>
   </tr>`
 }
 
