@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-  <!--Enlaces a funcionalidad -->
+  <!--Enlace a funcionalidad -->
   <link rel="prefetch" href="https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json">
 </head>
 
@@ -41,10 +41,10 @@
           <br> e-mail@example.com
         </div>
         <ul class="col s12 collection">
-          <a href="index.html">
-            <li class="titulos menu-izq collection-item active" style="background-color: #FFE521; color: #333333;">
+          <!--<a href="index.html">-->
+            <li class="titulos menu-izq collection-item active yellow-submarine">
               <i class="material-icons">assessment</i> REPORTES</li>
-          </a>
+          <!--</a>-->
           <li class="titulos collection-item">
             <i class="material-icons">import_contacts</i> MIS CURSOS</li>
           <li class="titulos collection-item">
@@ -58,7 +58,7 @@
         <section class="col s12 m9">
           <h5 class="subtitulos">SEDE</h5>
           <div class="input-field col s12 m12">
-            <select class="parrafos" style="display: block;" id="campusBox">
+            <select class="parrafos view-block" id="campusBox">
               <option disabled selected>Elige una...</option>
               <option>Lima</option>
               <option>Mexico</option>
@@ -69,7 +69,7 @@
         <section class="col s12 m9">
           <h5 class="subtitulos">GENERACIÓN</h5>
           <div class="input-field col s12 m12">
-            <select class="parrafos" style="display: block;" id="generationBox">
+            <select class="parrafos view-block" id="generationBox">
               <option disabled selected>Elige una...</option>
               <option>Tercera</option>
               <option>Cuarta</option>
@@ -90,19 +90,23 @@
           <div id="theme2" class="mg-top2 col s5 m4 font-rem"></div>
           <div id="theme3" class="mg-top2 col s12 m3 font-rem"></div>
           <!--Botón que imprimirá la lista de estudiantes-->
-          <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s8 btn waves-effect waves-light" type="submit" name="action"
-            style="background-color:#FFE521; color: #333333;">
+          <button id="studentsButton" class=" mg-top2 subtitulos col s3 offset-s8 btn waves-effect waves-light yellow-submarine" type="submit" name="action">
             ALUMNAS
           </button>
         </div>
-        <!--Impresión de lista de estudiantes y búsqueda individual-->
+        <!--Impresión de lista de estudiantes y búsqueda individual (iteración en proceso)
         <div id="search" class="col s6">
           <form class="mg-top3">
             <input type="text" id="searchBox" class="parrafos autocomplete" placeholder="Nombre de alumna">
           </form>
-        </div>
+        </div>-->
         <table id="alumnas-tabla" class="col s12 responsive-table "> </table>
-        <!--Impresión de datos por estudiante, de manera individual-->
+        <!--Impresión de datos por estudiante, de manera individual. Iteración en proceso.
+        <div class="input-field col s12">
+          <select id="select-alumnas" style="display: block;">
+            <option disabled selected>Elige una alumna</option>
+          </select>
+        </div>
         <div id="datos-alumna" class="mg-top3 parrafos col s12 ">
           <i class="col s1 material-icons" style="font-size: 8em;">account_box</i>
           <p class="col s4 offset-s1">Nombre:</p>
@@ -286,7 +290,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div>-->
       </section>
     </main>
   </div>

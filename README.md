@@ -4,16 +4,19 @@ Proyecto ideado en base a las necesidades de las training managers de Laboratori
 
 Data Dashboard que contiene información sobre las alumnas de Laboratoria y su proceso de aprendizaje a través de la plataforma LMS, tanto de manera generacional como individual. Diseño que prioriza la visualización de la información de manera intuitiva, digerida y de fácil uso. Disponible para uso en equipos de escritorio (página web) y dispositivos móviles.
 
-Instrucciones de uso:
+Instrucciones para desarrolladorxs:
+1. Realiza un fork de este repositorio.
+2.️ Clona tu fork a tu computadora.
+3. Instala las dependencias del proyecto con el comando npm install. 
+Si deseas aportar al proyecto escríbenos un issue o haz un pull request. 
+
+Instrucciones para usuarios:
+Ingresa a la Github page:
+(https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/src/index.html)
+
 1. Seleccionar sede deseada.
 2. Seleccionar generación deseada.
-3. Botón de alumnas para acceder a la tabla con la lista de las alumnas de la sede y generación seleccionadas.
-4. Botones en las columnas de Nombre y Porcentaje de avance para ordenar a las alumnas de manera descendente o ascendente, según el criterio que se requiera.
-5. Rellenar campo de búsqueda con nombre de alumna para acceder a la información individual de la alumna deseada.
-6. Opción REPORTES en el menú lateral para iniciar una búsqueda nueva con una sede y generación distintas a las seleccionadas anteriormente.
-
-Github page:
-(https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-data-dashboard/src/index.html)
+3. Clic en botón de alumnas para acceder a la tabla que contiene la lista de alumnas, de acuerdo a la sede y generación seleccionadas.
 
 # Data Dashboard
 

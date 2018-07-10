@@ -16,7 +16,7 @@ Se realiza una función para cargar la información al momento de entrar a la p�
 // Función cargar data  OK
 
 window.onload = () => {
-  console.log(url); 
+  console.log(url);
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -31,9 +31,9 @@ window.onload = () => {
 
 const processedData = (data) => {
   console.log(data);
-  
+
   const computarData = computeStudentsStats(data);
-  sortStudents(computarData,orderBy, orderDirection)
+  sortStudents(computarData, orderBy, orderDirection)
   // filterStudents(computarData, search )  
   console.log(computarData);
 };
@@ -48,7 +48,7 @@ function getData() {
   fetch(url)
     .then(response => response.json())
     .then(laboratoria => {
-      
+
       // computeStudentsStats(laboratoria);
     });
 }
@@ -58,7 +58,7 @@ Con esta función es necesario iterar en la data para poder recolectar los valor
 es una propiedad y en que otro puede ser esta un valor de acuerdo a la posición  o momento en el que se esta iterando.
 Se utiliza el forEach para iterar la información con funciones anónimas. Al momento de iterar en los temas y subtemas se elige llevar
 el objeto como esta en el archivo json ya que varia de la información es igual a la solicitada una vez que se crea el nuevo arreglo de objetos,
-se modifican las propiedades ya sea por alguna operación matemática, cambio de nombre o eliminación en caso de no ser necesaria.
+se modifican las propiedades ya sea por alguna operación matemática, cambio de nombre o eliminación en caso de no ser necesaria. 
 */
 
 window.computeStudentsStats = (laboratoria) => {
@@ -68,16 +68,16 @@ window.computeStudentsStats = (laboratoria) => {
   // console.log(campus)
   generations = Object.values(laboratoria);
   // console.log(generation)
-  generations.forEach(function(element) {
+  generations.forEach(function (element) {
     j = 0;
     studentsData = Object.values(element.generacion);
     // console.log(students)
     generations = Object.getOwnPropertyNames(element.generacion);
     // console.log(generation)
-    studentsData.forEach(function(element) {
+    studentsData.forEach(function (element) {
       studentsArray = element;
       // console.log(studentsArray)
-      studentsArray.estudiantes.forEach(function(student) {
+      studentsArray.estudiantes.forEach(function (student) {
         studentsArray0 = student;
         name = studentsArray0.nombre;
         // console.log(name)
@@ -112,7 +112,7 @@ window.computeStudentsStats = (laboratoria) => {
     });
     i++;
   });
-  students.forEach(function(element) {
+  students.forEach(function (element) {
     for (var variable in element.topics) {
       element.stats.topics[variable].completedPercentage = element.stats.topics[variable].porcentajeCompletado;
       delete element.stats.topics[variable].porcentajeCompletado;
@@ -146,13 +146,14 @@ window.computeStudentsStats = (laboratoria) => {
       }
     }
   });
-  
+
   return students;
 };
 
 // Función computeGenerationStats(laboratoria)
 /*
 Se comienza a trabajar en la segunda función con base en la primera.
+Aun no se logra solucionar que sólo se refleje información de cada sede, función en proceso.
 */
 
 function getData1() {
@@ -196,6 +197,7 @@ window.computeGenerationsStats = (laboratoria) => {
 /*
 Se comienza a trabajar en la tercer función solicitada, de acuerdo a la solicitud se utiliza el método sort y reverse.
 En cuanto a los numeros se debe tener un tratamiento especial.
+Función en proceso. Faltan parámetros orderBy y orderDirection. 
 */
 
 window.sortStudents = (students, orderBy, orderDirection) => {
@@ -222,11 +224,9 @@ de la propiedad name con el valor que se busca.
 
 window.filterStudents = (students, search) => {
   search = searchStu.value;
-  const searchStudents = students.filter(function(el) {
+  const searchStudents = students.filter(function (el) {
     return (el.name == search);
   });
   console.log(searchStudents);
   return searchStudents;
 };
-
-
